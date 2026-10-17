@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "jorg_eschbach",
+        "name": "Jörg Eschbach",
+        "user_id": "db9f726d033746389d32347374ed3a8e",
+        "device_trackers": []
+      }
+    ]
+  }
+}

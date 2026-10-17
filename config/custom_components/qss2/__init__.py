@@ -1,0 +1,263 @@
+"""Support for recording details."""
+
+import asyncio
+import concurrent.futures
+import logging
+import queue
+import threading
+from typing import TYPE_CHECKING, Any
+
+import probatio as prob
+
+from homeassistant.const import (
+    CONF_ENTITIES,
+    CONF_HOST,
+    CONF_NAME,
+    CONF_PORT,
+    EVENT_HOMEASSISTANT_START,
+    EVENT_HOMEASSISTANT_STOP,
+    EVENT_STATE_CHANGED,
+)
+from homeassistant.core import CoreState, Event, HomeAssistant, callback
+import homeassistant.helpers.config_validation as cv
+from homeassistant.helpers.entityfilter import (
+    INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA,
+    convert_include_exclude_filter,
+)
+
+from .const import (
+    CONF_AUTH,
+    CONF_AUTH_D_KEY,
+    CONF_AUTH_KID,
+    CONF_AUTH_SSL_CHECK,
+    CONF_AUTH_X_KEY,
+    CONF_AUTH_Y_KEY,
+    CONF_CONV,
+    CONF_DATA_TYPE,
+    CONF_FLUSH_INTERVAL_SECONDS,
+    CONF_MAX_BATCH_SIZE,
+    CONF_PRECISION,
+    CONF_TABLE_NAME,
+    DEFAULT_FLUSH_INTERVAL_SECONDS,
+    DEFAULT_MAX_BATCH_SIZE,
+    DEFAULT_TABLE_NAME,
+    DOMAIN,
+    DataType,
+)
+from .event_handling import (
+    QUEUE_POLL_TIMEOUT,
+    finish_task_if_empty_event,
+    get_event_from_queue,
+    put_event_to_queue,
+)
+from .io import (
+    QuestDBAuth,
+    QuestDBConfig,
+    QuestDBConnection,
+    insert_event_data_into_questdb,
+)
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+    from homeassistant.helpers.typing import ConfigType
+
+_LOGGER = logging.getLogger(__name__)
+
+
+AUTHENTICATION_SCHEMA = prob.Schema(
+    {
+        prob.Required(CONF_AUTH_SSL_CHECK, default=True): cv.boolean,
+        prob.Required(CONF_AUTH_KID, default=""): cv.string,
+        prob.Required(CONF_AUTH_D_KEY, default=""): cv.string,
+        prob.Required(CONF_AUTH_X_KEY, default=""): cv.string,
+        prob.Required(CONF_AUTH_Y_KEY, default=""): cv.string,
+    }
+)
+
+BASE_COMPONENT_SCHEMA = prob.Schema(
+    {
+        prob.Required(CONF_NAME): cv.string,
+    }
+)
+
+BASE_STRUCT_SCHEMA = BASE_COMPONENT_SCHEMA.extend(
+    {
+        prob.Optional(CONF_DATA_TYPE, default=DataType.STRING): prob.In(
+            [
+                DataType.INT16,
+                DataType.INT32,
+                DataType.INT64,
+                DataType.UINT16,
+                DataType.UINT32,
+                DataType.UINT64,
+                DataType.FLOAT16,
+                DataType.FLOAT32,
+                DataType.FLOAT64,
+                DataType.STRING,
+            ]
+        ),
+        prob.Optional(CONF_PRECISION): cv.positive_int,
+    }
+)
+
+
+CONVERSION_SCHEMA = prob.All(
+    BASE_STRUCT_SCHEMA.extend(
+        {
+        prob.Optional(CONF_ENTITIES, default=[]): cv.entity_ids,
+        }
+    )
+)
+
+CONFIG_SCHEMA = prob.Schema(
+    {
+        DOMAIN: INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA.extend(
+            {
+                prob.Required(CONF_HOST): cv.string,
+                prob.Required(CONF_PORT): cv.positive_int,
+                prob.Optional(CONF_TABLE_NAME, default=DEFAULT_TABLE_NAME): cv.string,
+                prob.Optional(
+                    CONF_MAX_BATCH_SIZE, default=DEFAULT_MAX_BATCH_SIZE
+                ): cv.positive_int,
+                prob.Optional(
+                    CONF_FLUSH_INTERVAL_SECONDS, default=DEFAULT_FLUSH_INTERVAL_SECONDS
+                ): cv.positive_int,
+                prob.Optional(CONF_AUTH, default={}): AUTHENTICATION_SCHEMA,
+                #prob.Optional(CONF_CONV): prob.All(cv.ensure_list, [CONVERSION_SCHEMA]),
+                prob.Optional(CONF_CONV): prob.All(prob.EnsureList(), [CONVERSION_SCHEMA]),
+            }
+        )
+    },
+    extra=prob.ALLOW_EXTRA,
+)
+
+
+async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
+    """Set up qss."""
+    conf = config[DOMAIN]
+
+    db_host = str(conf.get(CONF_HOST))
+    db_port = int(conf.get(CONF_PORT))
+    db_table_name = str(conf.get(CONF_TABLE_NAME))
+    db_max_batch_size = int(conf.get(CONF_MAX_BATCH_SIZE))
+    db_flush_interval_seconds = int(conf.get(CONF_FLUSH_INTERVAL_SECONDS))
+
+    entity_filter = convert_include_exclude_filter(conf)
+
+    db_auth = QuestDBAuth(
+        kid=conf.get(CONF_AUTH).get(CONF_AUTH_KID),
+        d_key=conf.get(CONF_AUTH).get(CONF_AUTH_D_KEY),
+        x_key=conf.get(CONF_AUTH).get(CONF_AUTH_X_KEY),
+        y_key=conf.get(CONF_AUTH).get(CONF_AUTH_Y_KEY),
+        ssl_check=conf.get(CONF_AUTH).get(CONF_AUTH_SSL_CHECK),
+    )
+    db_config = QuestDBConfig(
+        host=db_host,
+        port=db_port,
+        table_name=db_table_name,
+        auth=db_auth,
+        max_batch_size=db_max_batch_size,
+        flush_interval_seconds=db_flush_interval_seconds,
+    )
+
+    instance = QuestDB(hass=hass, entity_filter=entity_filter, config=db_config)
+    instance.async_initialize()
+    instance.start()
+
+    return await instance.qss_ready
+
+
+class QuestDB(threading.Thread):  # pylint: disable = R0902
+    """A threaded qss class."""
+
+    def __init__(
+        self,
+        hass: HomeAssistant,
+        entity_filter: Callable[[str], bool],
+        config: QuestDBConfig,
+    ) -> None:
+        """Initialize qss."""
+        threading.Thread.__init__(self, name="QSS")
+
+        self.hass = hass
+        self.entity_filter = entity_filter
+        self.config = config
+
+        self.queue: Any = queue.Queue()
+        self.qss_ready = asyncio.Future()
+        self.shutdown_event = threading.Event()
+
+    @callback
+    def async_initialize(self) -> None:
+        """Initialize qss."""
+        self.hass.bus.async_listen(EVENT_STATE_CHANGED, self.event_listener)
+
+    def run(self) -> None:
+        """Run qss and insert data."""
+        shutdown_task = object()
+        hass_started = concurrent.futures.Future()
+
+        @callback
+        def register() -> None:
+            """Register qss to Home Assistant."""
+            self.qss_ready.set_result(True)
+
+            def shutdown(event: Event) -> None:
+                """Shut down the qss."""
+                if not hass_started.done():
+                    hass_started.set_result(shutdown_task)
+                # Signal shutdown
+                self.shutdown_event.set()
+                self.queue.put(None)
+                self.join()
+
+            self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, shutdown)
+
+            if self.hass.state == CoreState.running:
+                hass_started.set_result(None)
+            else:
+
+                @callback
+                def notify_hass_started(event: Event) -> None:
+                    """Notify that hass has started."""
+                    hass_started.set_result(None)
+
+                self.hass.bus.async_listen_once(
+                    EVENT_HOMEASSISTANT_START, notify_hass_started
+                )
+
+        self.hass.add_job(register)
+        result = hass_started.result()
+
+        if result is shutdown_task:
+            return
+
+        # A single, long-lived connection is reused across all events instead
+        # of opening a new one per event. The `finally` guarantees any
+        # buffered-but-unflushed rows are flushed and the connection is
+        # closed cleanly on every exit path, including shutdown.
+        connection = QuestDBConnection(self.config)
+        try:
+            while True:
+                event = get_event_from_queue(
+                    self.queue, timeout=self.config.flush_interval_seconds
+                )
+                finish_task_if_empty_event(event, self.queue)
+                # Check if shutdown is in progress
+                if self.shutdown_event.is_set():
+                    break
+                if event is QUEUE_POLL_TIMEOUT:
+                    # No new event arrived within the flush interval: flush
+                    # any buffered rows so they don't sit unflushed for long
+                    # during quiet periods.
+                    connection.flush_if_due()
+                    continue
+                insert_event_data_into_questdb(connection, event, self.queue)
+        finally:
+            connection.close()
+
+    @callback
+    def event_listener(self, event: Event) -> None:
+        """Listen for new events and put them in the process queue."""
+        put_event_to_queue(event, self.entity_filter, self.queue)

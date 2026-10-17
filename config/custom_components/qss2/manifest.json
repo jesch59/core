@@ -1,0 +1,11 @@
+{
+  "domain": "qss2",
+  "name": "QuestDB State Storage (QSS)",
+  "codeowners": ["@jesch59"],
+  "dependencies": [],
+  "documentation": "https://github.com/jesch59/qss2",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/jesch59/qss/issues",
+  "requirements": ["questdb>=4.1.0", "tenacity>=9.0"],
+  "version": "0.1.0"
+}

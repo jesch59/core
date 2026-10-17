@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "marketplace.common",
+  "data": {
+    "archived_repositories": [],
+    "renamed_repositories": {
+      "tom-tagmdl/asset_intelligence": "Homes-That-Behave-Well-LLC/asset_intelligence"
+    },
+    "ignored_repositories": [],
+    "custom_repositories": []
+  }
+}
