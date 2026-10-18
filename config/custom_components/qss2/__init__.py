@@ -124,7 +124,6 @@ CONFIG_SCHEMA = prob.Schema(
                     CONF_FLUSH_INTERVAL_SECONDS, default=DEFAULT_FLUSH_INTERVAL_SECONDS
                 ): cv.positive_int,
                 prob.Optional(CONF_AUTH, default={}): AUTHENTICATION_SCHEMA,
-                #prob.Optional(CONF_CONV): prob.All(cv.ensure_list, [CONVERSION_SCHEMA]),
                 prob.Optional(CONF_CONV): prob.All(prob.EnsureList(), [CONVERSION_SCHEMA]),
             }
         )

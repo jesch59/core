@@ -1,0 +1,8 @@
+host: "192.168.2.42"
+port: 9009
+table_name: "qsst"
+authentication:
+  ssl_check: false
+include:
+  entities:
+    - "sensor.zaehler_e320_sml_power_curr"
