@@ -8,7 +8,7 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
-qss: !include qss.yaml
+qss: !include qss2.yaml
 
 logger:
   default: info
