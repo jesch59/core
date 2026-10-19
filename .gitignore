@@ -1,5 +1,5 @@
 # JE /config
-config/.storage/marketplace.repositories
+#config/.storage/marketplace.repositories
 config2/*
 
 tests/testing_config/deps
