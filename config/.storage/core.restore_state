@@ -4,27 +4,35 @@
   "key": "core.restore_state",
   "data": [
     {
-      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-10-18T07:58:41.969947+00:00","last_reported":"2026-10-18T07:58:41.969947+00:00","last_updated":"2026-10-18T07:58:41.969947+00:00","context":{"id":"01M570A8SH1HAYTG2ZYN9YQYYN","parent_id":null,"user_id":null}},
-      "extra_data": null,
-      "last_seen": "2026-10-18T12:16:18.945696+00:00"
-    },
-    {
-      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Automatic backup"},"last_changed":"2026-10-18T07:58:41.980556+00:00","last_reported":"2026-10-18T07:58:41.980556+00:00","last_updated":"2026-10-18T07:58:41.980556+00:00","context":{"id":"01M570A8SW87AD2Y6EE077XVQJ","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Automatic backup"},"last_changed":"2026-10-19T12:06:56.766468+00:00","last_reported":"2026-10-19T12:06:56.766468+00:00","last_updated":"2026-10-19T12:06:56.766468+00:00","context":{"id":"01M5A0XHFYMPKQ9FK5FJ0PZPCZ","parent_id":null,"user_id":null}},
       "extra_data": {
         "last_event_type": null,
         "last_event_attributes": null
       },
-      "last_seen": "2026-10-18T12:16:18.945696+00:00"
+      "last_seen": "2026-10-19T12:55:18.970873+00:00"
     },
     {
-      "state": {"entity_id":"person.jorg_eschbach","state":"unknown","attributes":{"editable":true,"id":"jorg_eschbach","device_trackers":[],"in_zones":[],"user_id":"db9f726d033746389d32347374ed3a8e","friendly_name":"Jörg Eschbach"},"last_changed":"2026-10-18T07:58:43.637213+00:00","last_reported":"2026-10-18T07:58:44.928621+00:00","last_updated":"2026-10-18T07:58:44.928621+00:00","context":{"id":"01M570ABP0ZK0JG7A2CYNNCZDX","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-10-19T12:06:56.846451+00:00","last_reported":"2026-10-19T12:06:56.846451+00:00","last_updated":"2026-10-19T12:06:56.846451+00:00","context":{"id":"01M5A0XHJEP1KTZ1KY45W33ZCB","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-10-18T12:16:18.945696+00:00"
+      "last_seen": "2026-10-19T12:55:18.970873+00:00"
     },
     {
-      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-10-18T07:58:44.714315+00:00","last_reported":"2026-10-18T07:58:44.714315+00:00","last_updated":"2026-10-18T07:58:44.714315+00:00","context":{"id":"01M570ABFA72W17PVMVY8YEKNN","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"person.jorg_eschbach","state":"unknown","attributes":{"editable":true,"id":"jorg_eschbach","device_trackers":[],"in_zones":[],"user_id":"db9f726d033746389d32347374ed3a8e","friendly_name":"Jörg Eschbach"},"last_changed":"2026-10-19T12:06:57.820768+00:00","last_reported":"2026-10-19T12:06:59.592598+00:00","last_updated":"2026-10-19T12:06:59.592598+00:00","context":{"id":"01M5A0XM88JY3CE9E5HQ60XAE4","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-10-18T12:16:18.945696+00:00"
+      "last_seen": "2026-10-19T12:55:18.970873+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.zaehler_e320_sml_power_curr","state":"-2543.0","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"SML Power"},"last_changed":"2026-10-19T12:06:58.111047+00:00","last_reported":"2026-10-19T12:06:58.101637+00:00","last_updated":"2026-10-19T12:06:58.111047+00:00","context":{"id":"01M5A0XJSZFAB01CZ9D395WFJN","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": -2543.0,
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2026-10-19T12:55:18.970873+00:00"
+    },
+    {
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-10-19T12:06:59.079616+00:00","last_reported":"2026-10-19T12:06:59.079616+00:00","last_updated":"2026-10-19T12:06:59.079616+00:00","context":{"id":"01M5A0XKR7YCC90VN6HSE0X7J2","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-10-19T12:55:18.970873+00:00"
     }
   ]
 }
