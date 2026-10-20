@@ -160,6 +160,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         flush_interval_seconds=db_flush_interval_seconds,
     )
 
+    _LOGGER.info("Async setup")
     instance = QuestDB(hass=hass, entity_filter=entity_filter, config=db_config)
     instance.async_initialize()
     instance.start()
