@@ -1,1 +1,18 @@
-[]
+- id: "1792826229811"
+  alias: SML Power feuern
+  description: ""
+  triggers:
+    - trigger: state
+      entity_id:
+        - sensor.zaehler_e320_sml_power_curr
+      from:
+        - "-300"
+      to:
+        - "-400"
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 10
+  conditions: []
+  actions: []
+  mode: single

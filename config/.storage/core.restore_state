@@ -4,35 +4,48 @@
   "key": "core.restore_state",
   "data": [
     {
-      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Automatic backup"},"last_changed":"2026-10-19T12:06:56.766468+00:00","last_reported":"2026-10-19T12:06:56.766468+00:00","last_updated":"2026-10-19T12:06:56.766468+00:00","context":{"id":"01M5A0XHFYMPKQ9FK5FJ0PZPCZ","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-10-24T07:06:02.911457+00:00","last_reported":"2026-10-24T07:06:02.911457+00:00","last_updated":"2026-10-24T07:06:02.911457+00:00","context":{"id":"01M5PBP5RZ8AB38B4WZDB1FCRT","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-10-24T12:04:57.917319+00:00"
+    },
+    {
+      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Automatic backup"},"last_changed":"2026-10-24T07:06:03.089296+00:00","last_reported":"2026-10-24T07:06:03.089296+00:00","last_updated":"2026-10-24T07:06:03.089296+00:00","context":{"id":"01M5PBP5YHE83PRD7GYS0WZYST","parent_id":null,"user_id":null}},
       "extra_data": {
         "last_event_type": null,
         "last_event_attributes": null
       },
-      "last_seen": "2026-10-19T12:55:18.970873+00:00"
+      "last_seen": "2026-10-24T12:04:57.917319+00:00"
     },
     {
-      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-10-19T12:06:56.846451+00:00","last_reported":"2026-10-19T12:06:56.846451+00:00","last_updated":"2026-10-19T12:06:56.846451+00:00","context":{"id":"01M5A0XHJEP1KTZ1KY45W33ZCB","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"person.jorg_eschbach","state":"unknown","attributes":{"editable":true,"id":"jorg_eschbach","device_trackers":[],"in_zones":[],"user_id":"db9f726d033746389d32347374ed3a8e","friendly_name":"Jörg Eschbach"},"last_changed":"2026-10-24T07:06:04.214439+00:00","last_reported":"2026-10-24T07:06:05.550342+00:00","last_updated":"2026-10-24T07:06:05.550342+00:00","context":{"id":"01M5PBP8BEVRVPS28K7GYKK5EP","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-10-19T12:55:18.970873+00:00"
+      "last_seen": "2026-10-24T12:04:57.917319+00:00"
     },
     {
-      "state": {"entity_id":"person.jorg_eschbach","state":"unknown","attributes":{"editable":true,"id":"jorg_eschbach","device_trackers":[],"in_zones":[],"user_id":"db9f726d033746389d32347374ed3a8e","friendly_name":"Jörg Eschbach"},"last_changed":"2026-10-19T12:06:57.820768+00:00","last_reported":"2026-10-19T12:06:59.592598+00:00","last_updated":"2026-10-19T12:06:59.592598+00:00","context":{"id":"01M5A0XM88JY3CE9E5HQ60XAE4","parent_id":null,"user_id":null}},
-      "extra_data": null,
-      "last_seen": "2026-10-19T12:55:18.970873+00:00"
-    },
-    {
-      "state": {"entity_id":"sensor.zaehler_e320_sml_power_curr","state":"-2543.0","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"SML Power"},"last_changed":"2026-10-19T12:06:58.111047+00:00","last_reported":"2026-10-19T12:06:58.101637+00:00","last_updated":"2026-10-19T12:06:58.111047+00:00","context":{"id":"01M5A0XJSZFAB01CZ9D395WFJN","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.zaehler_e320_sml_power_curr","state":"-3000","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"SML Power"},"last_changed":"2026-10-24T07:19:56.222248+00:00","last_reported":"2026-10-24T07:19:56.222248+00:00","last_updated":"2026-10-24T07:19:56.222248+00:00","context":{"id":"01M5PCFKHYVEJ7GJ8XE0VZRDXK","parent_id":null,"user_id":"db9f726d033746389d32347374ed3a8e"}},
       "extra_data": {
         "native_value": -2543.0,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2026-10-19T12:55:18.970873+00:00"
+      "last_seen": "2026-10-24T12:04:57.917319+00:00"
     },
     {
-      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-10-19T12:06:59.079616+00:00","last_reported":"2026-10-19T12:06:59.079616+00:00","last_updated":"2026-10-19T12:06:59.079616+00:00","context":{"id":"01M5A0XKR7YCC90VN6HSE0X7J2","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.zaehler_e320_sml_power_curr2","state":"-2453.0","attributes":{"state_class":"measurement","unit_of_measurement":"W","friendly_name":"Zaehler E320 SML Power_curr2"},"last_changed":"2026-10-24T07:06:04.833462+00:00","last_reported":"2026-10-24T07:06:04.833462+00:00","last_updated":"2026-10-24T07:06:04.833462+00:00","context":{"id":"01M5PBP7N12QSMQ31GV7TKDM3J","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": -2453.0,
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2026-10-24T12:04:57.917319+00:00"
+    },
+    {
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-10-24T07:06:05.415003+00:00","last_reported":"2026-10-24T07:06:05.415003+00:00","last_updated":"2026-10-24T07:06:05.415003+00:00","context":{"id":"01M5PBP877YA509VPK524YCK8S","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-10-19T12:55:18.970873+00:00"
+      "last_seen": "2026-10-24T12:04:57.917319+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.sml_power_feuern","state":"on","attributes":{"id":"1792826229811","last_triggered":"2026-10-24T07:17:57.065334+00:00","mode":"single","current":0,"friendly_name":"SML Power feuern"},"last_changed":"2026-10-24T07:17:39.324066+00:00","last_reported":"2026-10-24T07:17:57.077163+00:00","last_updated":"2026-10-24T07:17:57.077163+00:00","context":{"id":"01M5PCBZ5ZEQGJVJ09KRFW1VTC","parent_id":"01M5PCBZ5SBYKWP28P7W5TE1SX","user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-10-24T12:04:57.917319+00:00"
     }
   ]
 }

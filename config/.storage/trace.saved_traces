@@ -2,5 +2,101 @@
   "version": 1,
   "minor_version": 1,
   "key": "trace.saved_traces",
-  "data": {}
+  "data": {
+    "automation.1792826229811": [
+      {
+        "extended_dict": {
+          "last_step": "trigger",
+          "run_id": "660e882568e4ad17824c1165283ee61b",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2026-10-24T07:17:57.055596+00:00",
+            "finish": "2026-10-24T07:17:57.077895+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1792826229811",
+          "trigger": null,
+          "trace": {
+            "trigger": [
+              {
+                "path": "trigger",
+                "timestamp": "2026-10-24T07:17:57.055880+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.sml_power_feuern",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1792826229811",
+                      "last_triggered": null,
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "SML Power feuern"
+                    },
+                    "last_changed": "2026-10-24T07:17:39.324066+00:00",
+                    "last_reported": "2026-10-24T07:17:39.371483+00:00",
+                    "last_updated": "2026-10-24T07:17:39.324066+00:00",
+                    "context": {
+                      "id": "01M5PCBDVW2QQESW1EVHPQJ417",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "platform": null
+                  }
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1792826229811",
+            "alias": "SML Power feuern",
+            "description": "",
+            "triggers": [
+              {
+                "trigger": "state",
+                "entity_id": [
+                  "sensor.zaehler_e320_sml_power_curr"
+                ],
+                "from": [
+                  "-300"
+                ],
+                "to": [
+                  "-400"
+                ],
+                "for": {
+                  "hours": 0,
+                  "minutes": 0,
+                  "seconds": 10
+                }
+              }
+            ],
+            "conditions": [],
+            "actions": [],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01M5PCBZ5ZEQGJVJ09KRFW1VTC",
+            "parent_id": "01M5PCBZ5SBYKWP28P7W5TE1SX",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "trigger",
+          "run_id": "660e882568e4ad17824c1165283ee61b",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2026-10-24T07:17:57.055596+00:00",
+            "finish": "2026-10-24T07:17:57.077895+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1792826229811",
+          "trigger": null
+        }
+      }
+    ]
+  }
 }

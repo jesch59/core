@@ -1,9 +1,7 @@
 - sensor:
     - name: "Zaehler E320 SML Power_curr2"
       unique_id: zaehler_e320_sml_power_curr2
-      friendly_name: "Zaehler E320 SML Power_curr2"
       unit_of_measurement: "W"
-      data_type: "double"
       state_class: "measurement"
       state: >
         {{ "-2453" | float(0) }}

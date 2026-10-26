@@ -178,7 +178,7 @@ class QuestDB(threading.Thread):  # pylint: disable = R0902
         config: QuestDBConfig,
     ) -> None:
         """Initialize qss."""
-        threading.Thread.__init__(self, name="QSS")
+        threading.Thread.__init__(self, name="QSS2")
 
         self.hass = hass
         self.entity_filter = entity_filter

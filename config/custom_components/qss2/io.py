@@ -110,6 +110,7 @@ def _insert_row(sender: Sender, event: Event, table_name: str) -> None:
         symbols={"entity_id": entity_id},
         columns={
             "state": _strip_control_characters(state.state),
+            "value": 3250,
             "attributes": dumps(attrs, sort_keys=True, default=str),
         },
         at=event.time_fired,
