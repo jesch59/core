@@ -6,7 +6,7 @@ authentication:
 include:
   entities:
     - "sensor.zaehler_e320_sml_power_curr"
-typeconversion:
-  - entity_id: "sensor.zaehler_e320_sml_power_curr"
-    data_type: "float16"
+conversions:
+  - entity: "sensor.zaehler_e320_sml_power_curr"
+    type: "float"
     precision: 2

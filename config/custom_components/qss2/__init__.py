@@ -10,9 +10,7 @@ from typing import TYPE_CHECKING, Any
 import probatio as prob
 
 from homeassistant.const import (
-    CONF_ENTITIES,
     CONF_HOST,
-    CONF_NAME,
     CONF_PORT,
     EVENT_HOMEASSISTANT_START,
     EVENT_HOMEASSISTANT_STOP,
@@ -34,6 +32,7 @@ from .const import (
     CONF_AUTH_Y_KEY,
     CONF_CONV,
     CONF_DATA_TYPE,
+    CONF_ENTITY,
     CONF_FLUSH_INTERVAL_SECONDS,
     CONF_MAX_BATCH_SIZE,
     CONF_PRECISION,
@@ -77,13 +76,14 @@ AUTHENTICATION_SCHEMA = prob.Schema(
 
 BASE_COMPONENT_SCHEMA = prob.Schema(
     {
-        prob.Required(CONF_NAME): cv.string,
+        prob.Required(CONF_ENTITY): cv.string,
     }
 )
 
+
 BASE_STRUCT_SCHEMA = BASE_COMPONENT_SCHEMA.extend(
     {
-        prob.Optional(CONF_DATA_TYPE, default=DataType.STRING): prob.In(
+        prob.Optional(CONF_DATA_TYPE, default=DataType.INT16): prob.In(
             [
                 DataType.INT16,
                 DataType.INT32,
@@ -101,15 +101,6 @@ BASE_STRUCT_SCHEMA = BASE_COMPONENT_SCHEMA.extend(
     }
 )
 
-
-CONVERSION_SCHEMA = prob.All(
-    BASE_STRUCT_SCHEMA.extend(
-        {
-        prob.Optional(CONF_ENTITIES, default=[]): cv.entity_ids,
-        }
-    )
-)
-
 CONFIG_SCHEMA = prob.Schema(
     {
         DOMAIN: INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA.extend(
@@ -124,7 +115,9 @@ CONFIG_SCHEMA = prob.Schema(
                     CONF_FLUSH_INTERVAL_SECONDS, default=DEFAULT_FLUSH_INTERVAL_SECONDS
                 ): cv.positive_int,
                 prob.Optional(CONF_AUTH, default={}): AUTHENTICATION_SCHEMA,
-                prob.Optional(CONF_CONV): prob.All(prob.EnsureList(), [CONVERSION_SCHEMA]),
+                prob.Optional(CONF_CONV): prob.All(
+                    prob.EnsureList(), [BASE_STRUCT_SCHEMA]
+                ),
             }
         )
     },
@@ -178,7 +171,7 @@ class QuestDB(threading.Thread):  # pylint: disable = R0902
         config: QuestDBConfig,
     ) -> None:
         """Initialize qss."""
-        threading.Thread.__init__(self, name="QSS2")
+        threading.Thread.__init__(self, name="QSS")
 
         self.hass = hass
         self.entity_filter = entity_filter

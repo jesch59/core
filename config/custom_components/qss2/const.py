@@ -20,8 +20,9 @@ CONF_AUTH_KID = "kid"
 CONF_AUTH_D_KEY = "d_key"
 CONF_AUTH_X_KEY = "x_key"
 CONF_AUTH_Y_KEY = "y_key"
-CONF_CONV = "typeconversion"
+CONF_CONV = "conversions"
 CONF_DATA_TYPE = "data_type"
+CONF_ENTITY = "entity"
 CONF_PRECISION = "precision"
 
 RETRY_WAIT_SECONDS = 5
