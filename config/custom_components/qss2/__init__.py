@@ -7,7 +7,7 @@ import queue
 import threading
 from typing import TYPE_CHECKING, Any
 
-import probatio as prob
+import probatio
 
 from homeassistant.const import (
     CONF_HOST,
@@ -63,65 +63,60 @@ if TYPE_CHECKING:
 
 _LOGGER = logging.getLogger(__name__)
 
+def conversion_validator(config: dict[str, Any]) -> dict[str, Any]:
+    """Conversion schema validator."""
+    if config[CONF_DATA_TYPE] != 'float':
+        if CONF_PRECISION in config:
+            config.pop(CONF_PRECISION)
+    return config
 
-AUTHENTICATION_SCHEMA = prob.Schema(
+
+AUTHENTICATION_SCHEMA = probatio.Schema(
     {
-        prob.Required(CONF_AUTH_SSL_CHECK, default=True): cv.boolean,
-        prob.Required(CONF_AUTH_KID, default=""): cv.string,
-        prob.Required(CONF_AUTH_D_KEY, default=""): cv.string,
-        prob.Required(CONF_AUTH_X_KEY, default=""): cv.string,
-        prob.Required(CONF_AUTH_Y_KEY, default=""): cv.string,
+        probatio.Required(CONF_AUTH_SSL_CHECK, default=True): cv.boolean,
+        probatio.Required(CONF_AUTH_KID, default=""): cv.string,
+        probatio.Required(CONF_AUTH_D_KEY, default=""): cv.string,
+        probatio.Required(CONF_AUTH_X_KEY, default=""): cv.string,
+        probatio.Required(CONF_AUTH_Y_KEY, default=""): cv.string,
     }
 )
 
-BASE_COMPONENT_SCHEMA = prob.Schema(
+CONVERSION_SCHEMA = probatio.Schema(
     {
-        prob.Required(CONF_ENTITY): cv.string,
-    }
-)
-
-
-BASE_STRUCT_SCHEMA = BASE_COMPONENT_SCHEMA.extend(
-    {
-        prob.Optional(CONF_DATA_TYPE, default=DataType.INT16): prob.In(
+        probatio.Required(CONF_ENTITY): cv.entity_id,
+        probatio.Optional(CONF_DATA_TYPE, default=DataType.STRING): probatio.In(
             [
-                DataType.INT16,
-                DataType.INT32,
-                DataType.INT64,
-                DataType.UINT16,
-                DataType.UINT32,
-                DataType.UINT64,
-                DataType.FLOAT16,
-                DataType.FLOAT32,
-                DataType.FLOAT64,
+                DataType.INT,
+                DataType.FLOAT,
                 DataType.STRING,
             ]
         ),
-        prob.Optional(CONF_PRECISION): cv.positive_int,
+        probatio.Optional(CONF_PRECISION): cv.positive_int,
     }
 )
 
-CONFIG_SCHEMA = prob.Schema(
+
+CONFIG_SCHEMA = probatio.Schema(
     {
         DOMAIN: INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA.extend(
             {
-                prob.Required(CONF_HOST): cv.string,
-                prob.Required(CONF_PORT): cv.positive_int,
-                prob.Optional(CONF_TABLE_NAME, default=DEFAULT_TABLE_NAME): cv.string,
-                prob.Optional(
+                probatio.Required(CONF_HOST): cv.string,
+                probatio.Required(CONF_PORT): cv.positive_int,
+                probatio.Optional(CONF_TABLE_NAME, default=DEFAULT_TABLE_NAME): cv.string,
+                probatio.Optional(
                     CONF_MAX_BATCH_SIZE, default=DEFAULT_MAX_BATCH_SIZE
                 ): cv.positive_int,
-                prob.Optional(
+                probatio.Optional(
                     CONF_FLUSH_INTERVAL_SECONDS, default=DEFAULT_FLUSH_INTERVAL_SECONDS
                 ): cv.positive_int,
-                prob.Optional(CONF_AUTH, default={}): AUTHENTICATION_SCHEMA,
-                prob.Optional(CONF_CONV): prob.All(
-                    prob.EnsureList(), [BASE_STRUCT_SCHEMA]
+                probatio.Optional(CONF_AUTH, default={}): AUTHENTICATION_SCHEMA,
+                probatio.Optional(CONF_CONV): probatio.All(
+                    probatio.EnsureList(), [probatio.All(CONVERSION_SCHEMA, conversion_validator)]
                 ),
             }
         )
     },
-    extra=prob.ALLOW_EXTRA,
+    extra=probatio.ALLOW_EXTRA,
 )
 
 
@@ -134,6 +129,11 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     db_table_name = str(conf.get(CONF_TABLE_NAME))
     db_max_batch_size = int(conf.get(CONF_MAX_BATCH_SIZE))
     db_flush_interval_seconds = int(conf.get(CONF_FLUSH_INTERVAL_SECONDS))
+    # JE - alpha_vantage
+    # symbols: list[dict[str, str]] = config.get(CONF_SYMBOLS, [])
+    # conversions: list[dict[str, str]] = config.get(CONF_FOREIGN_EXCHANGE, [])
+
+
 
     entity_filter = convert_include_exclude_filter(conf)
 
@@ -185,6 +185,7 @@ class QuestDB(threading.Thread):  # pylint: disable = R0902
     def async_initialize(self) -> None:
         """Initialize qss."""
         self.hass.bus.async_listen(EVENT_STATE_CHANGED, self.event_listener)
+        #_LOGGER.info("Hello World! The integration is setting up")
 
     def run(self) -> None:
         """Run qss and insert data."""

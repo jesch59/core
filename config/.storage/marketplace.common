@@ -7,7 +7,8 @@
     "renamed_repositories": {
       "tom-tagmdl/asset_intelligence": "Homes-That-Behave-Well-LLC/asset_intelligence",
       "jasonmx/philips-hue-smooth-dimmer": "jasonmx/hue-smooth-dimming",
-      "Wouter0100/homeassistant-nanokvm": "chiconws/homeassistant-nanokvm"
+      "Wouter0100/homeassistant-nanokvm": "chiconws/homeassistant-nanokvm",
+      "bvdcode/myq-home-assistant": "bvdcode/home-assistant-myq"
     },
     "ignored_repositories": [],
     "custom_repositories": []

@@ -103,6 +103,7 @@ def _insert_row(sender: Sender, event: Event, table_name: str) -> None:
     round-trip.
     """
     entity_id = event.data["entity_id"]
+    _LOGGER.info("Event from %s", entity_id)
     state = event.data.get("new_state")
     attrs = _sanitize_value(dict(state.attributes))
     sender.row(
