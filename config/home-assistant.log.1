@@ -1,328 +1,334 @@
-2026-11-04 09:02:48.848 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration qss2 which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-11-04 09:02:48.849 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hello_world which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-11-04 09:02:49.070 INFO (MainThread) [homeassistant.setup] Setting up system_log
-2026-11-04 09:02:49.082 INFO (MainThread) [homeassistant.setup] Setting up network
-2026-11-04 09:02:49.085 INFO (MainThread) [homeassistant.setup] Setup of domain network took 0.00 seconds
-2026-11-04 09:02:49.085 INFO (MainThread) [homeassistant.setup] Setup of domain logger took 0.02 seconds
-2026-11-04 09:02:49.086 INFO (MainThread) [homeassistant.setup] Setup of domain system_log took 0.02 seconds
-2026-11-04 09:02:49.086 INFO (MainThread) [homeassistant.bootstrap] Setting up stage labs: {'labs'}; already set up: {}
+2026-11-19 17:39:36.356 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration qss2 which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-11-19 17:39:36.359 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hello_world which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-11-19 17:39:36.676 INFO (MainThread) [homeassistant.setup] Setting up system_log
+2026-11-19 17:39:36.680 WARNING (MainThread) [asyncio] Executing <Task pending name='Task-1' coro=<setup_and_run_hass() running at /workspaces/core/homeassistant/runner.py:248> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:749> cb=[_run_until_complete_cb() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:181] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 0.126 seconds
+2026-11-19 17:39:36.701 INFO (MainThread) [homeassistant.setup] Setting up network
+2026-11-19 17:39:36.705 INFO (MainThread) [homeassistant.setup] Setup of domain logger took 0.03 seconds
+2026-11-19 17:39:36.705 INFO (MainThread) [homeassistant.setup] Setup of domain system_log took 0.03 seconds
+2026-11-19 17:39:36.705 INFO (MainThread) [homeassistant.setup] Setup of domain network took 0.00 seconds
+2026-11-19 17:39:36.706 INFO (MainThread) [homeassistant.bootstrap] Setting up stage labs: {'labs'}; already set up: {}
 Dependencies: {}; already set up: {}
-2026-11-04 09:02:49.130 INFO (MainThread) [homeassistant.setup] Setting up labs
-2026-11-04 09:02:49.131 INFO (MainThread) [homeassistant.setup] Setup of domain labs took 0.00 seconds
-2026-11-04 09:02:49.132 INFO (MainThread) [homeassistant.bootstrap] Setting up stage frontend: {'frontend'}; already set up: {}
-Dependencies: {'api', 'http', 'lovelace', 'file_upload', 'onboarding', 'device_automation', 'websocket_api', 'diagnostics', 'map_tiles', 'config', 'repairs', 'auth', 'search'}; already set up: {'system_log'}
-2026-11-04 09:02:49.133 INFO (MainThread) [homeassistant.setup] Setting up http
-2026-11-04 09:02:49.144 INFO (MainThread) [homeassistant.setup] Setting up device_automation
-2026-11-04 09:02:49.144 INFO (MainThread) [homeassistant.setup] Setup of domain device_automation took 0.00 seconds
-2026-11-04 09:02:49.154 INFO (MainThread) [homeassistant.components.http.config] Using stable HTTP config
-2026-11-04 09:02:49.156 INFO (MainThread) [asyncio] <Server sockets=(<asyncio.TransportSocket fd=10, family=2, type=1, proto=6, laddr=('0.0.0.0', 8123)>, <asyncio.TransportSocket fd=12, family=10, type=1, proto=6, laddr=('::', 8123, 0, 0)>)> is serving
-2026-11-04 09:02:49.157 INFO (MainThread) [homeassistant.setup] Setup of domain http took 0.02 seconds
-2026-11-04 09:02:49.160 INFO (MainThread) [homeassistant.setup] Setting up websocket_api
-2026-11-04 09:02:49.160 INFO (MainThread) [homeassistant.setup] Setup of domain websocket_api took 0.00 seconds
-2026-11-04 09:02:49.161 INFO (MainThread) [homeassistant.setup] Setting up api
-2026-11-04 09:02:49.162 INFO (MainThread) [homeassistant.setup] Setup of domain api took 0.00 seconds
-2026-11-04 09:02:49.163 INFO (MainThread) [homeassistant.setup] Setting up auth
-2026-11-04 09:02:49.164 INFO (MainThread) [homeassistant.setup] Setup of domain auth took 0.00 seconds
-2026-11-04 09:02:49.165 INFO (MainThread) [homeassistant.setup] Setting up file_upload
-2026-11-04 09:02:49.165 INFO (MainThread) [homeassistant.setup] Setup of domain file_upload took 0.00 seconds
-2026-11-04 09:02:49.166 INFO (MainThread) [homeassistant.setup] Setting up diagnostics
-2026-11-04 09:02:49.168 INFO (MainThread) [homeassistant.setup] Setup of domain diagnostics took 0.00 seconds
-2026-11-04 09:02:49.171 INFO (MainThread) [homeassistant.setup] Setting up config
-2026-11-04 09:02:49.175 INFO (MainThread) [homeassistant.setup] Setup of domain config took 0.00 seconds
-2026-11-04 09:02:49.176 INFO (MainThread) [homeassistant.setup] Setting up repairs
-2026-11-04 09:02:49.177 INFO (MainThread) [homeassistant.setup] Setup of domain repairs took 0.00 seconds
-2026-11-04 09:02:49.182 INFO (MainThread) [homeassistant.setup] Setting up onboarding
-2026-11-04 09:02:49.185 INFO (MainThread) [homeassistant.setup] Setup of domain onboarding took 0.00 seconds
-2026-11-04 09:02:49.193 INFO (MainThread) [homeassistant.setup] Setting up search
-2026-11-04 09:02:49.193 INFO (MainThread) [homeassistant.setup] Setup of domain search took 0.00 seconds
-2026-11-04 09:02:49.196 INFO (MainThread) [homeassistant.setup] Setting up lovelace
-2026-11-04 09:02:49.201 INFO (MainThread) [homeassistant.setup] Setting up map_tiles
-2026-11-04 09:02:49.204 INFO (MainThread) [homeassistant.setup] Setup of domain map_tiles took 0.00 seconds
-2026-11-04 09:02:49.207 INFO (MainThread) [homeassistant.setup] Setup of domain lovelace took 0.01 seconds
-2026-11-04 09:02:49.210 INFO (MainThread) [homeassistant.setup] Setting up frontend
-2026-11-04 09:02:49.222 INFO (MainThread) [homeassistant.setup] Setup of domain frontend took 0.01 seconds
-2026-11-04 09:02:49.231 INFO (MainThread) [homeassistant.components.http.server] Now listening on port 8123
-2026-11-04 09:02:49.233 INFO (MainThread) [homeassistant.setup] Setup of domain http took 0.01 seconds
-2026-11-04 09:02:49.235 INFO (MainThread) [homeassistant.bootstrap] Setting up stage recorder: {'recorder'}; already set up: {}
+2026-11-19 17:39:36.754 INFO (MainThread) [homeassistant.setup] Setting up labs
+2026-11-19 17:39:36.757 INFO (MainThread) [homeassistant.setup] Setup of domain labs took 0.00 seconds
+2026-11-19 17:39:36.758 INFO (MainThread) [homeassistant.bootstrap] Setting up stage frontend: {'frontend'}; already set up: {}
+Dependencies: {'repairs', 'device_automation', 'search', 'file_upload', 'config', 'lovelace', 'diagnostics', 'auth', 'api', 'onboarding', 'websocket_api', 'http', 'map_tiles'}; already set up: {'system_log'}
+2026-11-19 17:39:36.760 INFO (MainThread) [homeassistant.setup] Setting up http
+2026-11-19 17:39:36.781 INFO (MainThread) [homeassistant.setup] Setting up device_automation
+2026-11-19 17:39:36.782 INFO (MainThread) [homeassistant.setup] Setup of domain device_automation took 0.00 seconds
+2026-11-19 17:39:36.814 INFO (MainThread) [homeassistant.components.http.config] Using stable HTTP config
+2026-11-19 17:39:36.818 INFO (MainThread) [asyncio] <Server sockets=(<asyncio.TransportSocket fd=10, family=10, type=1, proto=6, laddr=('::', 8123, 0, 0)>, <asyncio.TransportSocket fd=12, family=2, type=1, proto=6, laddr=('0.0.0.0', 8123)>)> is serving
+2026-11-19 17:39:36.823 INFO (MainThread) [homeassistant.setup] Setup of domain http took 0.06 seconds
+2026-11-19 17:39:36.828 INFO (MainThread) [homeassistant.setup] Setting up repairs
+2026-11-19 17:39:36.830 INFO (MainThread) [homeassistant.setup] Setup of domain repairs took 0.00 seconds
+2026-11-19 17:39:36.832 INFO (MainThread) [homeassistant.setup] Setting up api
+2026-11-19 17:39:36.833 INFO (MainThread) [homeassistant.setup] Setup of domain api took 0.00 seconds
+2026-11-19 17:39:36.836 INFO (MainThread) [homeassistant.setup] Setting up auth
+2026-11-19 17:39:36.837 INFO (MainThread) [homeassistant.setup] Setup of domain auth took 0.00 seconds
+2026-11-19 17:39:36.839 INFO (MainThread) [homeassistant.setup] Setting up config
+2026-11-19 17:39:36.850 INFO (MainThread) [homeassistant.setup] Setup of domain config took 0.01 seconds
+2026-11-19 17:39:36.853 INFO (MainThread) [homeassistant.setup] Setting up diagnostics
+2026-11-19 17:39:36.857 INFO (MainThread) [homeassistant.setup] Setup of domain diagnostics took 0.00 seconds
+2026-11-19 17:39:36.860 INFO (MainThread) [homeassistant.setup] Setting up file_upload
+2026-11-19 17:39:36.861 INFO (MainThread) [homeassistant.setup] Setup of domain file_upload took 0.00 seconds
+2026-11-19 17:39:36.862 INFO (MainThread) [homeassistant.setup] Setting up websocket_api
+2026-11-19 17:39:36.865 INFO (MainThread) [homeassistant.setup] Setup of domain websocket_api took 0.00 seconds
+2026-11-19 17:39:36.873 INFO (MainThread) [homeassistant.setup] Setting up onboarding
+2026-11-19 17:39:36.875 INFO (MainThread) [homeassistant.setup] Setup of domain onboarding took 0.00 seconds
+2026-11-19 17:39:36.883 INFO (MainThread) [homeassistant.setup] Setting up search
+2026-11-19 17:39:36.883 INFO (MainThread) [homeassistant.setup] Setup of domain search took 0.00 seconds
+2026-11-19 17:39:36.890 INFO (MainThread) [homeassistant.setup] Setting up lovelace
+2026-11-19 17:39:36.896 INFO (MainThread) [homeassistant.setup] Setting up map_tiles
+2026-11-19 17:39:36.900 INFO (MainThread) [homeassistant.setup] Setup of domain map_tiles took 0.00 seconds
+2026-11-19 17:39:36.903 INFO (MainThread) [homeassistant.setup] Setup of domain lovelace took 0.01 seconds
+2026-11-19 17:39:36.907 INFO (MainThread) [homeassistant.setup] Setting up frontend
+2026-11-19 17:39:36.915 INFO (MainThread) [homeassistant.setup] Setup of domain frontend took 0.01 seconds
+2026-11-19 17:39:36.918 INFO (MainThread) [homeassistant.components.http.server] Now listening on port 8123
+2026-11-19 17:39:36.920 INFO (MainThread) [homeassistant.setup] Setup of domain http took 0.00 seconds
+2026-11-19 17:39:36.920 INFO (MainThread) [homeassistant.bootstrap] Setting up stage recorder: {'recorder'}; already set up: {}
 Dependencies: {}; already set up: {}
-2026-11-04 09:02:49.237 INFO (MainThread) [homeassistant.setup] Setting up recorder
-2026-11-04 09:02:49.301 INFO (MainThread) [homeassistant.setup] Setup of domain recorder took 0.06 seconds
-2026-11-04 09:02:49.303 INFO (MainThread) [homeassistant.bootstrap] Nothing to set up in stage debugger: {'debugpy'}
-2026-11-04 09:02:49.303 INFO (MainThread) [homeassistant.bootstrap] Setting up stage zeroconf: {'zeroconf'}; already set up: {}
-Dependencies: {}; already set up: {'http', 'network', 'api'}
-2026-11-04 09:02:49.305 INFO (MainThread) [homeassistant.setup] Setting up zeroconf
-2026-11-04 09:02:49.311 INFO (MainThread) [homeassistant.components.zeroconf] Starting Zeroconf broadcast
-2026-11-04 09:02:49.311 INFO (MainThread) [homeassistant.setup] Setup of domain zeroconf took 0.01 seconds
-2026-11-04 09:02:49.312 INFO (MainThread) [homeassistant.bootstrap] Setting up stage 1: {'usb', 'ssdp', 'cloud', 'dhcp', 'bluetooth'}; already set up: {}
-Dependencies: {'ffmpeg', 'wake_word', 'stt', 'media_player', 'llm', 'web_rtc', 'assist_pipeline', 'tts', 'backup', 'webhook', 'conversation', 'intent'}; already set up: {'http', 'websocket_api', 'network', 'repairs', 'auth'}
-2026-11-04 09:02:49.327 INFO (MainThread) [homeassistant.setup] Setting up media_player
-2026-11-04 09:02:49.340 INFO (MainThread) [homeassistant.setup] Setup of domain media_player took 0.01 seconds
-2026-11-04 09:02:49.408 INFO (MainThread) [homeassistant.setup] Setting up webhook
-2026-11-04 09:02:49.412 INFO (MainThread) [homeassistant.setup] Setup of domain webhook took 0.00 seconds
-2026-11-04 09:02:49.435 INFO (MainThread) [homeassistant.setup] Setting up backup
-2026-11-04 09:02:49.456 WARNING (MainThread) [asyncio] Executing <Task pending name='Task-1' coro=<setup_and_run_hass() running at /workspaces/core/homeassistant/runner.py:248> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:749> cb=[_run_until_complete_cb() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:181] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 0.154 seconds
-2026-11-04 09:02:49.812 INFO (MainThread) [homeassistant.setup] Setting up wake_word
-2026-11-04 09:02:49.819 INFO (MainThread) [homeassistant.setup] Setup of domain wake_word took 0.01 seconds
-2026-11-04 09:02:49.862 INFO (MainThread) [homeassistant.setup] Setting up stt
-2026-11-04 09:02:49.879 INFO (MainThread) [homeassistant.setup] Setup of domain stt took 0.02 seconds
-2026-11-04 09:02:49.935 INFO (MainThread) [homeassistant.setup] Setting up ffmpeg
-2026-11-04 09:02:50.070 WARNING (MainThread) [asyncio] Executing <Task pending name='setup ffmpeg as dependency of tts' coro=<async_setup_component() running at /workspaces/core/homeassistant/setup.py:168> wait_for=<Future pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:459> cb=[gather.<locals>._done_callback() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:810] created at /workspaces/core/homeassistant/util/async_.py:43> took 0.135 seconds
-2026-11-04 09:02:50.071 INFO (MainThread) [homeassistant.setup] Setting up intent
-2026-11-04 09:02:50.100 INFO (MainThread) [homeassistant.setup] Setup of domain intent took 0.03 seconds
-2026-11-04 09:02:50.112 INFO (MainThread) [homeassistant.setup] Setting up llm
-2026-11-04 09:02:50.113 INFO (MainThread) [homeassistant.setup] Setup of domain llm took 0.00 seconds
-2026-11-04 09:02:50.306 INFO (MainThread) [homeassistant.setup] Setup of domain backup took 0.87 seconds
-2026-11-04 09:02:50.359 WARNING (MainThread) [asyncio] Executing <Task pending name='setup backup as after dependency of cloud' coro=<async_setup_component() running at /workspaces/core/homeassistant/setup.py:168> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:749> cb=[gather.<locals>._done_callback() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:810] created at /workspaces/core/homeassistant/util/async_.py:43> took 0.202 seconds
-2026-11-04 09:02:50.462 INFO (MainThread) [asyncio] <_UnixSubprocessTransport pid=7785 running> exited with return code 0
-2026-11-04 09:02:50.463 INFO (MainThread) [asyncio] <_UnixWritePipeTransport fd=18 idle bufsize=0> was closed by peer
-2026-11-04 09:02:50.472 INFO (MainThread) [asyncio] execute program 'ffmpeg': <_UnixSubprocessTransport pid=7785 returncode=0 stdin=<_UnixWritePipeTransport closed fd=18 closed> stdout=<_UnixReadPipeTransport fd=19 polling>>
-2026-11-04 09:02:50.501 INFO (MainThread) [asyncio] <_UnixReadPipeTransport fd=19 polling> was closed by peer
-2026-11-04 09:02:50.516 INFO (MainThread) [homeassistant.setup] Setup of domain ffmpeg took 0.58 seconds
-2026-11-04 09:02:50.790 INFO (MainThread) [homeassistant.setup] Setting up usb
-2026-11-04 09:02:50.796 INFO (MainThread) [homeassistant.setup] Setup of domain usb took 0.00 seconds
-2026-11-04 09:02:50.798 INFO (MainThread) [homeassistant.setup] Setting up web_rtc
-2026-11-04 09:02:50.798 INFO (MainThread) [homeassistant.setup] Setup of domain web_rtc took 0.00 seconds
-2026-11-04 09:02:51.283 INFO (MainThread) [homeassistant.setup] Setting up dhcp
-2026-11-04 09:02:51.283 INFO (MainThread) [homeassistant.setup] Setup of domain dhcp took 0.00 seconds
-2026-11-04 09:02:51.327 INFO (MainThread) [homeassistant.setup] Setting up ssdp
-2026-11-04 09:02:51.393 INFO (MainThread) [homeassistant.setup] Setup of domain ssdp took 0.07 seconds
-2026-11-04 09:02:51.468 INFO (MainThread) [homeassistant.setup] Setting up conversation
-2026-11-04 09:02:51.470 INFO (MainThread) [homeassistant.setup] Setup of domain conversation took 0.00 seconds
-2026-11-04 09:02:51.492 INFO (MainThread) [homeassistant.setup] Setting up tts
-2026-11-04 09:02:51.496 INFO (MainThread) [homeassistant.setup] Setup of domain tts took 0.00 seconds
-2026-11-04 09:02:51.513 INFO (MainThread) [homeassistant.setup] Setting up bluetooth
-2026-11-04 09:02:51.609 INFO (MainThread) [homeassistant.setup] Setting up event
-2026-11-04 09:02:51.614 INFO (MainThread) [homeassistant.setup] Setup of domain event took 0.00 seconds
-2026-11-04 09:02:51.617 INFO (MainThread) [homeassistant.components.event] Setting up backup.event
-2026-11-04 09:02:51.622 INFO (MainThread) [homeassistant.setup] Setting up sensor
-2026-11-04 09:02:51.622 INFO (MainThread) [homeassistant.setup] Setup of domain sensor took 0.00 seconds
-2026-11-04 09:02:51.624 INFO (MainThread) [homeassistant.components.sensor] Setting up backup.sensor
-2026-11-04 09:02:51.627 INFO (MainThread) [homeassistant.setup] Setting up assist_pipeline
-2026-11-04 09:02:51.628 INFO (MainThread) [homeassistant.setup] Setup of domain assist_pipeline took 0.00 seconds
-2026-11-04 09:02:51.634 INFO (MainThread) [homeassistant.setup] Setup of domain bluetooth took 0.12 seconds
-2026-11-04 09:02:51.810 INFO (MainThread) [homeassistant.setup] Setting up cloud
-2026-11-04 09:02:51.816 INFO (MainThread) [homeassistant.setup] Setup of domain cloud took 0.01 seconds
-2026-11-04 09:02:51.820 INFO (MainThread) [homeassistant.bootstrap] Setting up stage 2: {'image_processing', 'valve', 'shopping_list', 'input_select', 'input_text', 'air_quality', 'vacuum', 'input_datetime', 'battery', 'alarm_control_panel', 'analytics', 'weather', 'cover', 'time', 'hardware', 'qss2', 'text', 'light', 'temperature', 'illuminance', 'moisture', 'power', 'update', 'automation', 'siren', 'brands', 'door', 'notify', 'motion', 'schedule', 'image', 'ai_task', 'binary_sensor', 'gate', 'input_boolean', 'tag', 'geo_location', 'datetime', 'input_number', 'sun', 'template', 'radio_browser', 'radio_frequency', 'vibration', 'input_button', 'button', 'go2rtc', 'timer', 'person', 'camera', 'garage_door', 'default_config', 'occupancy', 'counter', 'infrared', 'lawn_mower', 'fan', 'date', 'met', 'switch', 'humidifier', 'marketplace', 'scene', 'script', 'select', 'number', 'water_heater', 'lock', 'remote', 'application_credentials', 'google_translate', 'device_tracker', 'system_health', 'zone', 'humidity', 'climate', 'window', 'assist_satellite'}; already set up: {'wake_word', 'stt', 'labs', 'media_player', 'tts', 'backup', 'logger', 'event', 'sensor', 'conversation', 'network', 'frontend'}
-Dependencies: {'image_upload', 'usage_prediction', 'mobile_app', 'logbook', 'blueprint', 'media_source', 'homeassistant_alerts', 'file', 'stream', 'my', 'trace', 'history', 'energy'}; already set up: {'recorder', 'usb', 'media_player', 'llm', 'web_rtc', 'tts', 'websocket_api', 'assist_pipeline', 'config', 'search', 'lovelace', 'ssdp', 'onboarding', 'backup', 'webhook', 'system_log', 'bluetooth', 'network', 'map_tiles', 'auth', 'frontend', 'wake_word', 'stt', 'http', 'file_upload', 'cloud', 'dhcp', 'diagnostics', 'conversation', 'ffmpeg', 'api', 'zeroconf', 'device_automation', 'repairs', 'intent'}
-2026-11-04 09:02:51.827 INFO (MainThread) [homeassistant.setup] Setting up camera
-2026-11-04 09:02:51.829 INFO (MainThread) [homeassistant.setup] Setup of domain camera took 0.00 seconds
-2026-11-04 09:02:51.831 INFO (MainThread) [homeassistant.setup] Setting up image_processing
-2026-11-04 09:02:51.832 INFO (MainThread) [homeassistant.setup] Setup of domain image_processing took 0.00 seconds
-2026-11-04 09:02:51.833 INFO (MainThread) [homeassistant.setup] Setting up valve
-2026-11-04 09:02:51.834 INFO (MainThread) [homeassistant.setup] Setup of domain valve took 0.00 seconds
-2026-11-04 09:02:51.838 INFO (MainThread) [homeassistant.setup] Setting up vacuum
-2026-11-04 09:02:51.840 INFO (MainThread) [homeassistant.setup] Setup of domain vacuum took 0.00 seconds
-2026-11-04 09:02:51.845 INFO (MainThread) [homeassistant.setup] Setting up alarm_control_panel
-2026-11-04 09:02:51.846 INFO (MainThread) [homeassistant.setup] Setup of domain alarm_control_panel took 0.00 seconds
-2026-11-04 09:02:51.852 INFO (MainThread) [homeassistant.setup] Setting up button
-2026-11-04 09:02:51.853 INFO (MainThread) [homeassistant.setup] Setup of domain button took 0.00 seconds
-2026-11-04 09:02:51.869 INFO (MainThread) [homeassistant.setup] Setting up cover
-2026-11-04 09:02:51.874 INFO (MainThread) [homeassistant.setup] Setup of domain cover took 0.00 seconds
-2026-11-04 09:02:51.887 INFO (MainThread) [homeassistant.setup] Setting up light
-2026-11-04 09:02:51.891 INFO (MainThread) [homeassistant.setup] Setup of domain light took 0.00 seconds
-2026-11-04 09:02:51.906 INFO (MainThread) [homeassistant.setup] Setting up update
-2026-11-04 09:02:51.907 INFO (MainThread) [homeassistant.setup] Setup of domain update took 0.00 seconds
-2026-11-04 09:02:51.911 INFO (MainThread) [homeassistant.setup] Setting up lawn_mower
-2026-11-04 09:02:51.913 INFO (MainThread) [homeassistant.setup] Setup of domain lawn_mower took 0.00 seconds
-2026-11-04 09:02:51.949 INFO (MainThread) [homeassistant.setup] Setting up fan
-2026-11-04 09:02:51.950 INFO (MainThread) [homeassistant.setup] Setup of domain fan took 0.00 seconds
-2026-11-04 09:02:51.960 INFO (MainThread) [homeassistant.setup] Setting up switch
-2026-11-04 09:02:51.960 INFO (MainThread) [homeassistant.setup] Setup of domain switch took 0.00 seconds
-2026-11-04 09:02:51.964 INFO (MainThread) [homeassistant.setup] Setting up humidifier
-2026-11-04 09:02:51.967 INFO (MainThread) [homeassistant.setup] Setup of domain humidifier took 0.00 seconds
-2026-11-04 09:02:51.974 INFO (MainThread) [homeassistant.setup] Setting up scene
-2026-11-04 09:02:51.980 INFO (MainThread) [homeassistant.components.scene] Setting up homeassistant.scene
-2026-11-04 09:02:51.983 INFO (MainThread) [homeassistant.setup] Setup of domain scene took 0.01 seconds
-2026-11-04 09:02:51.987 INFO (MainThread) [homeassistant.setup] Setting up notify
-2026-11-04 09:02:51.989 INFO (MainThread) [homeassistant.setup] Setup of domain notify took 0.00 seconds
-2026-11-04 09:02:51.995 INFO (MainThread) [homeassistant.setup] Setting up select
-2026-11-04 09:02:51.998 INFO (MainThread) [homeassistant.setup] Setup of domain select took 0.00 seconds
-2026-11-04 09:02:52.007 INFO (MainThread) [homeassistant.setup] Setting up climate
-2026-11-04 09:02:52.012 INFO (MainThread) [homeassistant.setup] Setup of domain climate took 0.01 seconds
-2026-11-04 09:02:52.034 INFO (MainThread) [homeassistant.setup] Setting up number
-2026-11-04 09:02:52.040 INFO (MainThread) [homeassistant.setup] Setup of domain number took 0.01 seconds
-2026-11-04 09:02:52.043 INFO (MainThread) [homeassistant.setup] Setting up water_heater
-2026-11-04 09:02:52.044 INFO (MainThread) [homeassistant.setup] Setup of domain water_heater took 0.00 seconds
-2026-11-04 09:02:52.049 INFO (MainThread) [homeassistant.setup] Setting up media_source
-2026-11-04 09:02:52.051 INFO (MainThread) [homeassistant.setup] Setup of domain media_source took 0.00 seconds
-2026-11-04 09:02:52.059 INFO (MainThread) [homeassistant.setup] Setting up lock
-2026-11-04 09:02:52.060 INFO (MainThread) [homeassistant.setup] Setup of domain lock took 0.00 seconds
-2026-11-04 09:02:52.063 INFO (MainThread) [homeassistant.setup] Setting up binary_sensor
-2026-11-04 09:02:52.067 INFO (MainThread) [homeassistant.setup] Setup of domain binary_sensor took 0.00 seconds
-2026-11-04 09:02:52.068 INFO (MainThread) [homeassistant.setup] Setting up remote
-2026-11-04 09:02:52.071 INFO (MainThread) [homeassistant.setup] Setup of domain remote took 0.00 seconds
-2026-11-04 09:02:52.075 INFO (MainThread) [homeassistant.setup] Setting up zone
-2026-11-04 09:02:52.084 INFO (MainThread) [homeassistant.setup] Setup of domain zone took 0.01 seconds
-2026-11-04 09:02:52.090 INFO (MainThread) [homeassistant.setup] Setting up device_tracker
-2026-11-04 09:02:52.101 INFO (MainThread) [homeassistant.setup] Setup of domain device_tracker took 0.01 seconds
-2026-11-04 09:02:52.120 INFO (MainThread) [homeassistant.setup] Setting up input_number
-2026-11-04 09:02:52.128 INFO (MainThread) [homeassistant.setup] Setup of domain input_number took 0.01 seconds
-2026-11-04 09:02:52.142 INFO (MainThread) [homeassistant.setup] Setting up blueprint
-2026-11-04 09:02:52.143 INFO (MainThread) [homeassistant.setup] Setup of domain blueprint took 0.00 seconds
-2026-11-04 09:02:52.151 INFO (MainThread) [homeassistant.setup] Setting up history
-2026-11-04 09:02:52.176 INFO (MainThread) [homeassistant.setup] Setup of domain history took 0.03 seconds
-2026-11-04 09:02:52.208 INFO (MainThread) [homeassistant.setup] Setting up input_select
-2026-11-04 09:02:52.212 INFO (MainThread) [homeassistant.setup] Setup of domain input_select took 0.00 seconds
-2026-11-04 09:02:52.217 INFO (MainThread) [homeassistant.setup] Setting up logbook
-2026-11-04 09:02:52.234 INFO (MainThread) [homeassistant.setup] Setup of domain logbook took 0.02 seconds
-2026-11-04 09:02:52.243 INFO (MainThread) [homeassistant.setup] Setting up input_text
-2026-11-04 09:02:52.253 INFO (MainThread) [homeassistant.setup] Setup of domain input_text took 0.01 seconds
-2026-11-04 09:02:52.259 INFO (MainThread) [homeassistant.setup] Setting up input_button
-2026-11-04 09:02:52.265 INFO (MainThread) [homeassistant.setup] Setup of domain input_button took 0.01 seconds
-2026-11-04 09:02:52.277 INFO (MainThread) [homeassistant.setup] Setting up timer
-2026-11-04 09:02:52.281 INFO (MainThread) [homeassistant.setup] Setup of domain timer took 0.00 seconds
-2026-11-04 09:02:52.292 INFO (MainThread) [homeassistant.setup] Setting up image_upload
-2026-11-04 09:02:52.299 INFO (MainThread) [homeassistant.setup] Setup of domain image_upload took 0.01 seconds
-2026-11-04 09:02:52.303 INFO (MainThread) [homeassistant.setup] Setting up person
-2026-11-04 09:02:52.346 INFO (MainThread) [homeassistant.setup] Setting up stream
-2026-11-04 09:02:52.417 INFO (MainThread) [homeassistant.setup] Setting up trace
-2026-11-04 09:02:52.418 INFO (MainThread) [homeassistant.setup] Setup of domain trace took 0.00 seconds
-2026-11-04 09:02:52.483 INFO (MainThread) [homeassistant.setup] Setting up script
-2026-11-04 09:02:52.492 INFO (MainThread) [homeassistant.setup] Setup of domain script took 0.01 seconds
-2026-11-04 09:02:52.520 INFO (MainThread) [homeassistant.setup] Setting up input_boolean
-2026-11-04 09:02:52.526 INFO (MainThread) [homeassistant.setup] Setup of domain input_boolean took 0.00 seconds
-2026-11-04 09:02:52.530 INFO (MainThread) [homeassistant.setup] Setting up system_health
-2026-11-04 09:02:52.532 INFO (MainThread) [homeassistant.setup] Setup of domain system_health took 0.00 seconds
-2026-11-04 09:02:52.545 WARNING (MainThread) [asyncio] Executing <Task pending name='Task-1' coro=<setup_and_run_hass() running at /workspaces/core/homeassistant/runner.py:248> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:749> cb=[_run_until_complete_cb() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:181] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 0.725 seconds
-2026-11-04 09:02:52.579 INFO (MainThread) [homeassistant.setup] Setting up datetime
-2026-11-04 09:02:52.581 INFO (MainThread) [homeassistant.setup] Setup of domain datetime took 0.00 seconds
-2026-11-04 09:02:52.586 INFO (MainThread) [homeassistant.setup] Setting up radio_frequency
-2026-11-04 09:02:52.588 INFO (MainThread) [homeassistant.setup] Setup of domain radio_frequency took 0.00 seconds
-2026-11-04 09:02:52.592 INFO (MainThread) [homeassistant.setup] Setting up air_quality
-2026-11-04 09:02:52.593 INFO (MainThread) [homeassistant.setup] Setup of domain air_quality took 0.00 seconds
-2026-11-04 09:02:52.614 INFO (MainThread) [homeassistant.setup] Setting up weather
-2026-11-04 09:02:52.617 INFO (MainThread) [homeassistant.setup] Setup of domain weather took 0.00 seconds
-2026-11-04 09:02:52.626 INFO (MainThread) [homeassistant.setup] Setting up time
-2026-11-04 09:02:52.627 INFO (MainThread) [homeassistant.setup] Setup of domain time took 0.00 seconds
-2026-11-04 09:02:52.629 INFO (MainThread) [homeassistant.setup] Setting up text
-2026-11-04 09:02:52.643 INFO (MainThread) [homeassistant.setup] Setup of domain text took 0.01 seconds
-2026-11-04 09:02:52.660 INFO (MainThread) [homeassistant.setup] Setting up infrared
-2026-11-04 09:02:52.664 INFO (MainThread) [homeassistant.setup] Setup of domain infrared took 0.00 seconds
-2026-11-04 09:02:52.673 INFO (MainThread) [homeassistant.setup] Setting up siren
-2026-11-04 09:02:52.675 INFO (MainThread) [homeassistant.setup] Setup of domain siren took 0.00 seconds
-2026-11-04 09:02:52.698 INFO (MainThread) [homeassistant.setup] Setting up date
-2026-11-04 09:02:52.700 INFO (MainThread) [homeassistant.setup] Setup of domain date took 0.00 seconds
-2026-11-04 09:02:52.706 INFO (MainThread) [homeassistant.setup] Setup of domain stream took 0.36 seconds
-2026-11-04 09:02:52.708 INFO (MainThread) [homeassistant.setup] Setting up image
-2026-11-04 09:02:52.711 INFO (MainThread) [homeassistant.setup] Setup of domain image took 0.00 seconds
-2026-11-04 09:02:52.720 INFO (MainThread) [homeassistant.setup] Setting up ai_task
-2026-11-04 09:02:52.726 INFO (MainThread) [homeassistant.setup] Setup of domain ai_task took 0.01 seconds
-2026-11-04 09:02:52.791 INFO (MainThread) [homeassistant.setup] Setup of domain person took 0.49 seconds
-2026-11-04 09:02:52.797 INFO (MainThread) [homeassistant.setup] Setting up assist_satellite
-2026-11-04 09:02:52.898 INFO (MainThread) [homeassistant.setup] Setup of domain assist_satellite took 0.10 seconds
-2026-11-04 09:02:52.900 WARNING (MainThread) [asyncio] Executing <Task finished name='setup component assist_satellite' coro=<async_setup_component() done, defined at /workspaces/core/homeassistant/setup.py:148> result=True created at /workspaces/core/homeassistant/util/async_.py:43> took 0.103 seconds
-2026-11-04 09:02:52.900 INFO (MainThread) [homeassistant.setup] Setting up geo_location
-2026-11-04 09:02:52.901 INFO (MainThread) [homeassistant.setup] Setup of domain geo_location took 0.00 seconds
-2026-11-04 09:02:52.904 INFO (MainThread) [homeassistant.setup] Setting up sun
-2026-11-04 09:02:52.905 INFO (MainThread) [homeassistant.setup] Setup of domain sun took 0.00 seconds
-2026-11-04 09:02:52.909 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up sun.binary_sensor
-2026-11-04 09:02:52.911 INFO (MainThread) [homeassistant.components.sensor] Setting up sun.sensor
-2026-11-04 09:02:52.921 INFO (MainThread) [homeassistant.setup] Setting up template
-2026-11-04 09:02:52.927 INFO (MainThread) [homeassistant.setup] Setup of domain template took 0.01 seconds
-2026-11-04 09:02:52.929 INFO (MainThread) [homeassistant.components.sensor] Setting up template.sensor
-2026-11-04 09:02:52.948 INFO (MainThread) [homeassistant.setup] Setting up shopping_list
-2026-11-04 09:02:52.950 INFO (MainThread) [homeassistant.setup] Setup of domain shopping_list took 0.00 seconds
-2026-11-04 09:02:52.959 INFO (MainThread) [homeassistant.components.sensor] Setting up template.sensor
-2026-11-04 09:02:52.982 INFO (MainThread) [homeassistant.setup] Setting up radio_browser
-2026-11-04 09:02:52.985 INFO (MainThread) [homeassistant.setup] Setup of domain radio_browser took 0.00 seconds
-2026-11-04 09:02:53.010 INFO (MainThread) [homeassistant.setup] Setting up energy
-2026-11-04 09:02:53.018 INFO (MainThread) [homeassistant.setup] Setup of domain energy took 0.01 seconds
-2026-11-04 09:02:53.027 INFO (MainThread) [homeassistant.setup] Setting up vibration
-2026-11-04 09:02:53.027 INFO (MainThread) [homeassistant.setup] Setup of domain vibration took 0.00 seconds
-2026-11-04 09:02:53.096 INFO (MainThread) [homeassistant.setup] Setting up input_datetime
-2026-11-04 09:02:53.102 INFO (MainThread) [homeassistant.setup] Setup of domain input_datetime took 0.01 seconds
-2026-11-04 09:02:53.103 INFO (MainThread) [homeassistant.setup] Setting up battery
-2026-11-04 09:02:53.105 INFO (MainThread) [homeassistant.setup] Setup of domain battery took 0.00 seconds
-2026-11-04 09:02:53.121 INFO (MainThread) [homeassistant.setup] Setting up go2rtc
-2026-11-04 09:02:53.127 INFO (MainThread) [homeassistant.setup] Setting up tag
-2026-11-04 09:02:53.143 INFO (MainThread) [homeassistant.setup] Setup of domain tag took 0.02 seconds
-2026-11-04 09:02:53.152 INFO (MainThread) [homeassistant.setup] Setting up hardware
-2026-11-04 09:02:53.170 INFO (MainThread) [homeassistant.setup] Setting up garage_door
-2026-11-04 09:02:53.174 INFO (MainThread) [homeassistant.setup] Setup of domain garage_door took 0.00 seconds
-2026-11-04 09:02:53.185 INFO (MainThread) [homeassistant.setup] Setup of domain hardware took 0.03 seconds
-2026-11-04 09:02:53.206 ERROR (MainThread) [homeassistant.config] Invalid config for 'qss2' at qss2.yaml, line 11: value must be one of [<DataType.FLOAT16: 'float16'>, <DataType.FLOAT32: 'float32'>, <DataType.FLOAT64: 'float64'>, <DataType.INT16: 'int16'>, <DataType.INT32: 'int32'>, <DataType.INT64: 'int64'>, <DataType.STRING: 'string'>, <DataType.UINT16: 'uint16'>, <DataType.UINT32: 'uint32'>, <DataType.UINT64: 'uint64'>] for dictionary value 'qss2->conversions->0->type', got 'float', please check the docs at https://github.com/jesch59/qss2
-2026-11-04 09:02:53.206 ERROR (MainThread) [homeassistant.setup] Setup failed for custom integration 'qss2': Invalid config.
-2026-11-04 09:02:53.214 INFO (MainThread) [homeassistant.setup] Setting up temperature
-2026-11-04 09:02:53.216 INFO (MainThread) [homeassistant.setup] Setup of domain temperature took 0.00 seconds
-2026-11-04 09:02:53.218 INFO (MainThread) [homeassistant.setup] Setting up file
-2026-11-04 09:02:53.218 INFO (MainThread) [homeassistant.setup] Setup of domain file took 0.00 seconds
-2026-11-04 09:02:53.220 INFO (MainThread) [homeassistant.setup] Setting up homeassistant_alerts
-2026-11-04 09:02:53.222 INFO (MainThread) [homeassistant.setup] Setup of domain homeassistant_alerts took 0.00 seconds
-2026-11-04 09:02:53.227 INFO (MainThread) [asyncio] execute program '/usr/bin/go2rtc': <_UnixSubprocessTransport pid=7818 running stdout=<_UnixReadPipeTransport fd=28 polling>>
-2026-11-04 09:02:53.228 INFO (MainThread) [homeassistant.setup] Setting up my
-2026-11-04 09:02:53.229 INFO (MainThread) [homeassistant.setup] Setup of domain my took 0.00 seconds
-2026-11-04 09:02:53.239 INFO (MainThread) [homeassistant.setup] Setting up usage_prediction
-2026-11-04 09:02:53.240 INFO (MainThread) [homeassistant.setup] Setup of domain usage_prediction took 0.00 seconds
-2026-11-04 09:02:53.241 INFO (MainThread) [homeassistant.setup] Setting up illuminance
-2026-11-04 09:02:53.241 INFO (MainThread) [homeassistant.setup] Setup of domain illuminance took 0.00 seconds
-2026-11-04 09:02:53.249 INFO (MainThread) [homeassistant.setup] Setting up occupancy
-2026-11-04 09:02:53.251 INFO (MainThread) [homeassistant.setup] Setup of domain occupancy took 0.00 seconds
-2026-11-04 09:02:53.262 INFO (MainThread) [homeassistant.setup] Setting up moisture
-2026-11-04 09:02:53.262 INFO (MainThread) [homeassistant.setup] Setup of domain moisture took 0.00 seconds
-2026-11-04 09:02:53.263 INFO (MainThread) [homeassistant.setup] Setting up power
-2026-11-04 09:02:53.264 INFO (MainThread) [homeassistant.setup] Setup of domain power took 0.00 seconds
-2026-11-04 09:02:53.269 INFO (MainThread) [homeassistant.setup] Setting up counter
-2026-11-04 09:02:53.274 INFO (MainThread) [homeassistant.setup] Setup of domain counter took 0.00 seconds
-2026-11-04 09:02:53.279 INFO (MainThread) [homeassistant.setup] Setting up automation
-2026-11-04 09:02:53.298 INFO (MainThread) [homeassistant.setup] Setup of domain automation took 0.02 seconds
-2026-11-04 09:02:53.303 INFO (MainThread) [homeassistant.setup] Setting up met
-2026-11-04 09:02:53.304 INFO (MainThread) [homeassistant.setup] Setup of domain met took 0.00 seconds
-2026-11-04 09:02:53.331 INFO (MainThread) [homeassistant.setup] Setting up brands
-2026-11-04 09:02:53.337 INFO (MainThread) [homeassistant.setup] Setup of domain brands took 0.01 seconds
-2026-11-04 09:02:53.358 INFO (MainThread) [homeassistant.setup] Setup of domain go2rtc took 0.24 seconds
-2026-11-04 09:02:53.435 INFO (MainThread) [homeassistant.setup] Setting up marketplace
-2026-11-04 09:02:53.437 INFO (MainThread) [homeassistant.setup] Setup of domain marketplace took 0.00 seconds
-2026-11-04 09:02:53.442 INFO (MainThread) [homeassistant.components.marketplace] Starting the Marketplace
-2026-11-04 09:02:53.494 INFO (MainThread) [homeassistant.setup] Setting up door
-2026-11-04 09:02:53.494 INFO (MainThread) [homeassistant.setup] Setup of domain door took 0.00 seconds
-2026-11-04 09:02:53.500 INFO (MainThread) [homeassistant.setup] Setting up motion
-2026-11-04 09:02:53.502 INFO (MainThread) [homeassistant.setup] Setup of domain motion took 0.00 seconds
-2026-11-04 09:02:53.505 INFO (MainThread) [homeassistant.setup] Setting up schedule
-2026-11-04 09:02:53.507 INFO (MainThread) [homeassistant.setup] Setup of domain schedule took 0.00 seconds
-2026-11-04 09:02:53.510 INFO (MainThread) [homeassistant.setup] Setting up gate
-2026-11-04 09:02:53.511 INFO (MainThread) [homeassistant.setup] Setup of domain gate took 0.00 seconds
-2026-11-04 09:02:53.512 INFO (MainThread) [homeassistant.setup] Setting up application_credentials
-2026-11-04 09:02:53.513 INFO (MainThread) [homeassistant.setup] Setup of domain application_credentials took 0.00 seconds
-2026-11-04 09:02:53.514 INFO (MainThread) [homeassistant.setup] Setting up google_translate
-2026-11-04 09:02:53.515 INFO (MainThread) [homeassistant.setup] Setup of domain google_translate took 0.00 seconds
-2026-11-04 09:02:53.517 INFO (MainThread) [homeassistant.setup] Setting up humidity
-2026-11-04 09:02:53.518 INFO (MainThread) [homeassistant.setup] Setup of domain humidity took 0.00 seconds
-2026-11-04 09:02:53.519 INFO (MainThread) [homeassistant.setup] Setting up window
-2026-11-04 09:02:53.520 INFO (MainThread) [homeassistant.setup] Setup of domain window took 0.00 seconds
-2026-11-04 09:02:53.527 INFO (MainThread) [homeassistant.setup] Setting up todo
-2026-11-04 09:02:53.530 INFO (MainThread) [homeassistant.setup] Setup of domain todo took 0.00 seconds
-2026-11-04 09:02:53.535 INFO (MainThread) [homeassistant.components.todo] Setting up shopping_list.todo
-2026-11-04 09:02:53.557 INFO (MainThread) [homeassistant.components.sensor] Setting up energy.sensor
-2026-11-04 09:02:53.560 INFO (MainThread) [homeassistant.setup] Setting up analytics
-2026-11-04 09:02:53.561 INFO (MainThread) [homeassistant.setup] Setup of domain analytics took 0.00 seconds
-2026-11-04 09:02:53.599 INFO (MainThread) [homeassistant.components.marketplace] Restore started
-2026-11-04 09:02:53.614 INFO (MainThread) [homeassistant.setup] Setting up mobile_app
-2026-11-04 09:02:53.618 INFO (MainThread) [homeassistant.setup] Setup of domain mobile_app took 0.00 seconds
-2026-11-04 09:02:53.624 INFO (MainThread) [homeassistant.components.tts] Setting up google_translate.tts
-2026-11-04 09:02:53.636 INFO (MainThread) [homeassistant.components.notify] Setting up notify.mobile_app
-2026-11-04 09:02:53.683 INFO (MainThread) [homeassistant.setup] Setting up default_config
-2026-11-04 09:02:53.684 INFO (MainThread) [homeassistant.setup] Setup of domain default_config took 0.00 seconds
-2026-11-04 09:02:53.782 INFO (MainThread) [homeassistant.components.weather] Setting up met.weather
-2026-11-04 09:02:54.094 WARNING (MainThread) [asyncio] Executing <Task pending name='config entry setup  marketplace 01M4TP69DGHZFGBRQKWQ3296DF' coro=<ConfigEntry.async_setup_locked() running at /workspaces/core/homeassistant/config_entries.py:1061> cb=[gather.<locals>._done_callback() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:810] created at /workspaces/core/homeassistant/util/async_.py:43> took 0.255 seconds
-2026-11-04 09:02:54.185 INFO (MainThread) [homeassistant.components.marketplace] Restore done
-2026-11-04 09:02:54.187 INFO (MainThread) [homeassistant.components.marketplace] Enable category: integration
-2026-11-04 09:02:54.187 INFO (MainThread) [homeassistant.components.marketplace] Enable category: plugin
-2026-11-04 09:02:54.187 INFO (MainThread) [homeassistant.components.marketplace] Enable category: template
-2026-11-04 09:02:54.187 INFO (MainThread) [homeassistant.components.marketplace] Enable category: theme
-2026-11-04 09:02:54.188 INFO (MainThread) [homeassistant.components.marketplace] Stage changed: setup
-2026-11-04 09:02:54.191 INFO (MainThread) [homeassistant.components.switch] Setting up marketplace.switch
-2026-11-04 09:02:54.193 INFO (MainThread) [homeassistant.components.update] Setting up marketplace.update
-2026-11-04 09:02:54.196 INFO (MainThread) [homeassistant.components.marketplace] Stage changed: waiting
-2026-11-04 09:02:54.196 INFO (MainThread) [homeassistant.components.marketplace] Setup complete, waiting for Home Assistant before startup tasks starts
-2026-11-04 09:02:54.198 INFO (MainThread) [homeassistant.bootstrap] Home Assistant initialized in 5.35s
-2026-11-04 09:02:54.198 INFO (MainThread) [homeassistant.core] Starting Home Assistant 2026.11.0.dev0
-2026-11-04 09:02:54.203 INFO (MainThread) [homeassistant.components.automation.sml_power_feuern] Initialized trigger SML Power feuern
-2026-11-04 09:02:54.320 INFO (MainThread) [homeassistant.components.marketplace] Stage changed: startup
-2026-11-04 09:02:54.335 WARNING (MainThread) [asyncio] Executing <Task pending name='Task-1' coro=<setup_and_run_hass() running at /workspaces/core/homeassistant/runner.py:256> wait_for=<Future pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:459> cb=[_run_until_complete_cb() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:181] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 0.132 seconds
-2026-11-04 09:02:54.354 INFO (MainThread) [homeassistant.components.marketplace] Loading removed repositories
-2026-11-04 09:02:54.613 INFO (MainThread) [homeassistant.components.marketplace] Loading known repositories
-2026-11-04 09:02:55.054 WARNING (MainThread) [asyncio] Executing <Task finished name='Task-171' coro=<MarketplaceManager.async_get_category_repositories_from_catalog() done, defined at /workspaces/core/homeassistant/components/marketplace/base.py:1093> result=None created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 0.123 seconds
-2026-11-04 09:02:55.054 INFO (MainThread) [homeassistant.components.marketplace] Stage changed: running
-2026-11-04 09:05:44.827 INFO (MainThread) [asyncio] <_UnixReadPipeTransport fd=28 polling> was closed by peer
-2026-11-04 09:05:44.832 INFO (MainThread) [asyncio] <_UnixSubprocessTransport pid=7818 running stdout=<_UnixReadPipeTransport closed fd=28 closed>> exited with return code 0
-2026-11-04 09:05:46.855 INFO (Recorder) [homeassistant.components.recorder.pool.RecorderPool] Pool recreating
+2026-11-19 17:39:36.921 INFO (MainThread) [homeassistant.setup] Setting up recorder
+2026-11-19 17:39:36.993 INFO (MainThread) [homeassistant.setup] Setup of domain recorder took 0.07 seconds
+2026-11-19 17:39:36.996 INFO (MainThread) [homeassistant.bootstrap] Nothing to set up in stage debugger: {'debugpy'}
+2026-11-19 17:39:36.996 INFO (MainThread) [homeassistant.bootstrap] Setting up stage zeroconf: {'zeroconf'}; already set up: {}
+Dependencies: {}; already set up: {'network', 'http', 'api'}
+2026-11-19 17:39:37.000 INFO (MainThread) [homeassistant.setup] Setting up zeroconf
+2026-11-19 17:39:37.012 INFO (MainThread) [homeassistant.components.zeroconf] Starting Zeroconf broadcast
+2026-11-19 17:39:37.014 INFO (MainThread) [homeassistant.setup] Setup of domain zeroconf took 0.01 seconds
+2026-11-19 17:39:37.014 INFO (MainThread) [homeassistant.bootstrap] Setting up stage 1: {'bluetooth', 'cloud', 'dhcp', 'usb', 'ssdp'}; already set up: {}
+Dependencies: {'backup', 'assist_pipeline', 'tts', 'conversation', 'ffmpeg', 'intent', 'stt', 'webhook', 'media_player', 'llm', 'wake_word', 'web_rtc'}; already set up: {'repairs', 'network', 'auth', 'websocket_api', 'http'}
+2026-11-19 17:39:37.049 INFO (MainThread) [homeassistant.setup] Setting up media_player
+2026-11-19 17:39:37.059 INFO (MainThread) [homeassistant.setup] Setup of domain media_player took 0.01 seconds
+2026-11-19 17:39:37.116 INFO (MainThread) [homeassistant.setup] Setting up webhook
+2026-11-19 17:39:37.120 INFO (MainThread) [homeassistant.setup] Setup of domain webhook took 0.00 seconds
+2026-11-19 17:39:37.149 INFO (MainThread) [homeassistant.setup] Setting up backup
+2026-11-19 17:39:37.197 WARNING (MainThread) [asyncio] Executing <Task pending name='Task-1' coro=<setup_and_run_hass() running at /workspaces/core/homeassistant/runner.py:248> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:749> cb=[_run_until_complete_cb() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:181] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 0.201 seconds
+2026-11-19 17:39:37.215 INFO (MainThread) [homeassistant.setup] Setting up ffmpeg
+2026-11-19 17:39:37.234 INFO (MainThread) [homeassistant.setup] Setting up intent
+2026-11-19 17:39:37.242 INFO (MainThread) [homeassistant.setup] Setup of domain intent took 0.01 seconds
+2026-11-19 17:39:37.254 INFO (MainThread) [homeassistant.setup] Setting up llm
+2026-11-19 17:39:37.255 INFO (MainThread) [homeassistant.setup] Setup of domain llm took 0.00 seconds
+2026-11-19 17:39:37.266 INFO (MainThread) [homeassistant.setup] Setting up stt
+2026-11-19 17:39:37.268 INFO (MainThread) [homeassistant.setup] Setup of domain stt took 0.00 seconds
+2026-11-19 17:39:37.310 INFO (MainThread) [homeassistant.setup] Setup of domain backup took 0.16 seconds
+2026-11-19 17:39:37.350 INFO (MainThread) [homeassistant.setup] Setting up wake_word
+2026-11-19 17:39:37.370 INFO (MainThread) [homeassistant.setup] Setup of domain wake_word took 0.02 seconds
+2026-11-19 17:39:37.472 INFO (MainThread) [asyncio] execute program 'ffmpeg': <_UnixSubprocessTransport pid=39958 running stdin=<_UnixWritePipeTransport fd=19 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=20 polling>>
+2026-11-19 17:39:37.650 INFO (MainThread) [asyncio] <_UnixReadPipeTransport fd=20 polling> was closed by peer
+2026-11-19 17:39:37.687 INFO (MainThread) [asyncio] <_UnixSubprocessTransport pid=39958 running stdin=<_UnixWritePipeTransport closed fd=19 closed> stdout=<_UnixReadPipeTransport closing fd=20 idle>> exited with return code 0
+2026-11-19 17:39:37.705 INFO (MainThread) [homeassistant.setup] Setup of domain ffmpeg took 0.49 seconds
+2026-11-19 17:39:39.497 INFO (MainThread) [homeassistant.setup] Setting up usb
+2026-11-19 17:39:39.503 INFO (MainThread) [homeassistant.setup] Setup of domain usb took 0.00 seconds
+2026-11-19 17:39:39.512 INFO (MainThread) [homeassistant.setup] Setting up web_rtc
+2026-11-19 17:39:39.520 INFO (MainThread) [homeassistant.setup] Setup of domain web_rtc took 0.01 seconds
+2026-11-19 17:39:39.802 INFO (MainThread) [homeassistant.setup] Setting up dhcp
+2026-11-19 17:39:39.803 INFO (MainThread) [homeassistant.setup] Setup of domain dhcp took 0.00 seconds
+2026-11-19 17:39:39.834 INFO (MainThread) [homeassistant.setup] Setting up ssdp
+2026-11-19 17:39:40.232 WARNING (MainThread) [asyncio] Executing <Task pending name='setup component ssdp' coro=<async_setup_component() running at /workspaces/core/homeassistant/setup.py:168> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:749> cb=[set.remove(), gather.<locals>._done_callback() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:810] created at /workspaces/core/homeassistant/util/async_.py:43> took 0.398 seconds
+2026-11-19 17:39:40.270 INFO (MainThread) [homeassistant.setup] Setup of domain ssdp took 0.44 seconds
+2026-11-19 17:39:40.313 INFO (MainThread) [homeassistant.setup] Setting up conversation
+2026-11-19 17:39:40.314 INFO (MainThread) [homeassistant.setup] Setup of domain conversation took 0.00 seconds
+2026-11-19 17:39:40.349 INFO (MainThread) [homeassistant.setup] Setting up tts
+2026-11-19 17:39:40.353 INFO (MainThread) [homeassistant.setup] Setup of domain tts took 0.00 seconds
+2026-11-19 17:39:40.365 INFO (MainThread) [homeassistant.setup] Setting up bluetooth
+2026-11-19 17:39:40.440 INFO (MainThread) [homeassistant.setup] Setting up event
+2026-11-19 17:39:40.441 INFO (MainThread) [homeassistant.setup] Setup of domain event took 0.00 seconds
+2026-11-19 17:39:40.464 INFO (MainThread) [homeassistant.components.event] Setting up backup.event
+2026-11-19 17:39:40.495 INFO (MainThread) [homeassistant.setup] Setting up sensor
+2026-11-19 17:39:40.497 INFO (MainThread) [homeassistant.setup] Setup of domain sensor took 0.00 seconds
+2026-11-19 17:39:40.499 INFO (MainThread) [homeassistant.components.sensor] Setting up backup.sensor
+2026-11-19 17:39:40.504 INFO (MainThread) [homeassistant.setup] Setting up assist_pipeline
+2026-11-19 17:39:40.507 INFO (MainThread) [homeassistant.setup] Setup of domain assist_pipeline took 0.00 seconds
+2026-11-19 17:39:40.515 INFO (MainThread) [homeassistant.setup] Setup of domain bluetooth took 0.15 seconds
+2026-11-19 17:39:40.819 INFO (MainThread) [homeassistant.setup] Setting up cloud
+2026-11-19 17:39:40.836 INFO (MainThread) [homeassistant.setup] Setup of domain cloud took 0.02 seconds
+2026-11-19 17:39:40.882 INFO (MainThread) [homeassistant.components.websocket_api.http.connection] [140585789929120] Received unknown command: brands/access_token
+2026-11-19 17:39:40.912 INFO (MainThread) [homeassistant.bootstrap] Setting up stage 2: {'analytics', 'qss2', 'marketplace', 'air_quality', 'met', 'timer', 'tag', 'alarm_control_panel', 'shopping_list', 'update', 'assist_satellite', 'switch', 'humidifier', 'text', 'radio_frequency', 'go2rtc', 'counter', 'hardware', 'template', 'script', 'cover', 'water_heater', 'infrared', 'scene', 'input_button', 'image', 'camera', 'brands', 'climate', 'humidity', 'sun', 'person', 'door', 'input_select', 'system_health', 'weather', 'date', 'moisture', 'image_processing', 'remote', 'ai_task', 'battery', 'illuminance', 'motion', 'garage_door', 'automation', 'input_text', 'geo_location', 'schedule', 'vibration', 'input_boolean', 'google_translate', 'lawn_mower', 'default_config', 'radio_browser', 'select', 'temperature', 'window', 'gate', 'application_credentials', 'zone', 'input_datetime', 'input_number', 'light', 'button', 'power', 'binary_sensor', 'datetime', 'fan', 'vacuum', 'device_tracker', 'lock', 'number', 'time', 'notify', 'occupancy', 'valve', 'siren'}; already set up: {'backup', 'event', 'tts', 'conversation', 'frontend', 'sensor', 'network', 'labs', 'stt', 'media_player', 'wake_word', 'logger'}
+Dependencies: {'logbook', 'my', 'homeassistant_alerts', 'media_source', 'stream', 'energy', 'usage_prediction', 'trace', 'mobile_app', 'blueprint', 'history', 'file', 'image_upload'}; already set up: {'bluetooth', 'conversation', 'frontend', 'zeroconf', 'http', 'repairs', 'backup', 'intent', 'usb', 'onboarding', 'llm', 'ssdp', 'ffmpeg', 'media_player', 'map_tiles', 'recorder', 'assist_pipeline', 'tts', 'device_automation', 'file_upload', 'search', 'diagnostics', 'stt', 'webhook', 'system_log', 'config', 'network', 'cloud', 'lovelace', 'auth', 'dhcp', 'websocket_api', 'wake_word', 'web_rtc', 'api'}
+2026-11-19 17:39:40.935 INFO (MainThread) [homeassistant.setup] Setting up alarm_control_panel
+2026-11-19 17:39:40.945 INFO (MainThread) [homeassistant.setup] Setup of domain alarm_control_panel took 0.01 seconds
+2026-11-19 17:39:40.971 INFO (MainThread) [homeassistant.setup] Setting up update
+2026-11-19 17:39:40.981 INFO (MainThread) [homeassistant.setup] Setup of domain update took 0.01 seconds
+2026-11-19 17:39:41.019 INFO (MainThread) [homeassistant.setup] Setting up switch
+2026-11-19 17:39:41.025 INFO (MainThread) [homeassistant.setup] Setup of domain switch took 0.01 seconds
+2026-11-19 17:39:41.048 INFO (MainThread) [homeassistant.setup] Setting up humidifier
+2026-11-19 17:39:41.052 INFO (MainThread) [homeassistant.setup] Setup of domain humidifier took 0.00 seconds
+2026-11-19 17:39:41.073 INFO (MainThread) [homeassistant.setup] Setting up lawn_mower
+2026-11-19 17:39:41.075 INFO (MainThread) [homeassistant.setup] Setup of domain lawn_mower took 0.00 seconds
+2026-11-19 17:39:41.121 INFO (MainThread) [homeassistant.setup] Setting up select
+2026-11-19 17:39:41.130 INFO (MainThread) [homeassistant.setup] Setup of domain select took 0.01 seconds
+2026-11-19 17:39:41.146 INFO (MainThread) [homeassistant.setup] Setting up cover
+2026-11-19 17:39:41.164 INFO (MainThread) [homeassistant.setup] Setup of domain cover took 0.02 seconds
+2026-11-19 17:39:41.181 INFO (MainThread) [homeassistant.setup] Setting up water_heater
+2026-11-19 17:39:41.184 INFO (MainThread) [homeassistant.setup] Setup of domain water_heater took 0.00 seconds
+2026-11-19 17:39:41.241 INFO (MainThread) [homeassistant.setup] Setting up scene
+2026-11-19 17:39:41.244 INFO (MainThread) [homeassistant.components.scene] Setting up homeassistant.scene
+2026-11-19 17:39:41.247 INFO (MainThread) [homeassistant.setup] Setup of domain scene took 0.01 seconds
+2026-11-19 17:39:41.459 INFO (MainThread) [homeassistant.setup] Setting up image
+2026-11-19 17:39:41.464 INFO (MainThread) [homeassistant.setup] Setup of domain image took 0.01 seconds
+2026-11-19 17:39:41.466 INFO (MainThread) [homeassistant.setup] Setting up camera
+2026-11-19 17:39:41.470 INFO (MainThread) [homeassistant.setup] Setup of domain camera took 0.00 seconds
+2026-11-19 17:39:41.487 INFO (MainThread) [homeassistant.setup] Setting up light
+2026-11-19 17:39:41.501 INFO (MainThread) [homeassistant.setup] Setup of domain light took 0.01 seconds
+2026-11-19 17:39:41.532 INFO (MainThread) [homeassistant.setup] Setting up button
+2026-11-19 17:39:41.534 INFO (MainThread) [homeassistant.setup] Setup of domain button took 0.00 seconds
+2026-11-19 17:39:41.543 INFO (MainThread) [homeassistant.setup] Setting up climate
+2026-11-19 17:39:41.545 INFO (MainThread) [homeassistant.setup] Setup of domain climate took 0.00 seconds
+2026-11-19 17:39:41.554 INFO (MainThread) [homeassistant.setup] Setting up binary_sensor
+2026-11-19 17:39:41.557 INFO (MainThread) [homeassistant.setup] Setup of domain binary_sensor took 0.00 seconds
+2026-11-19 17:39:41.574 INFO (MainThread) [homeassistant.setup] Setting up datetime
+2026-11-19 17:39:41.578 INFO (MainThread) [homeassistant.setup] Setup of domain datetime took 0.00 seconds
+2026-11-19 17:39:41.582 INFO (MainThread) [homeassistant.setup] Setting up fan
+2026-11-19 17:39:41.590 INFO (MainThread) [homeassistant.setup] Setup of domain fan took 0.01 seconds
+2026-11-19 17:39:41.619 INFO (MainThread) [homeassistant.setup] Setting up vacuum
+2026-11-19 17:39:41.630 INFO (MainThread) [homeassistant.setup] Setup of domain vacuum took 0.01 seconds
+2026-11-19 17:39:41.635 INFO (MainThread) [homeassistant.setup] Setting up image_processing
+2026-11-19 17:39:41.636 INFO (MainThread) [homeassistant.setup] Setup of domain image_processing took 0.00 seconds
+2026-11-19 17:39:41.637 INFO (MainThread) [homeassistant.setup] Setting up remote
+2026-11-19 17:39:41.640 INFO (MainThread) [homeassistant.setup] Setup of domain remote took 0.00 seconds
+2026-11-19 17:39:41.646 INFO (MainThread) [homeassistant.setup] Setting up zone
+2026-11-19 17:39:41.653 INFO (MainThread) [homeassistant.setup] Setup of domain zone took 0.01 seconds
+2026-11-19 17:39:41.662 INFO (MainThread) [homeassistant.setup] Setting up device_tracker
+2026-11-19 17:39:41.668 INFO (MainThread) [homeassistant.setup] Setup of domain device_tracker took 0.01 seconds
+2026-11-19 17:39:41.671 INFO (MainThread) [homeassistant.setup] Setting up media_source
+2026-11-19 17:39:41.673 INFO (MainThread) [homeassistant.setup] Setup of domain media_source took 0.00 seconds
+2026-11-19 17:39:41.676 INFO (MainThread) [homeassistant.setup] Setting up ai_task
+2026-11-19 17:39:41.679 INFO (MainThread) [homeassistant.setup] Setup of domain ai_task took 0.00 seconds
+2026-11-19 17:39:41.680 INFO (MainThread) [homeassistant.setup] Setting up lock
+2026-11-19 17:39:41.681 INFO (MainThread) [homeassistant.setup] Setup of domain lock took 0.00 seconds
+2026-11-19 17:39:41.688 INFO (MainThread) [homeassistant.setup] Setting up number
+2026-11-19 17:39:41.691 INFO (MainThread) [homeassistant.setup] Setup of domain number took 0.00 seconds
+2026-11-19 17:39:41.696 INFO (MainThread) [homeassistant.setup] Setting up notify
+2026-11-19 17:39:41.705 INFO (MainThread) [homeassistant.setup] Setup of domain notify took 0.01 seconds
+2026-11-19 17:39:41.711 INFO (MainThread) [homeassistant.setup] Setting up valve
+2026-11-19 17:39:41.713 INFO (MainThread) [homeassistant.setup] Setup of domain valve took 0.00 seconds
+2026-11-19 17:39:41.719 INFO (MainThread) [homeassistant.setup] Setting up siren
+2026-11-19 17:39:41.721 INFO (MainThread) [homeassistant.setup] Setup of domain siren took 0.00 seconds
+2026-11-19 17:39:41.735 INFO (MainThread) [homeassistant.setup] Setting up history
+2026-11-19 17:39:41.738 INFO (MainThread) [homeassistant.setup] Setup of domain history took 0.00 seconds
+2026-11-19 17:39:41.759 INFO (MainThread) [homeassistant.setup] Setting up blueprint
+2026-11-19 17:39:41.761 INFO (MainThread) [homeassistant.setup] Setup of domain blueprint took 0.00 seconds
+2026-11-19 17:39:41.773 INFO (MainThread) [homeassistant.setup] Setting up trace
+2026-11-19 17:39:41.775 INFO (MainThread) [homeassistant.setup] Setup of domain trace took 0.00 seconds
+2026-11-19 17:39:41.814 INFO (MainThread) [homeassistant.setup] Setting up automation
+2026-11-19 17:39:41.829 INFO (MainThread) [homeassistant.setup] Setup of domain automation took 0.01 seconds
+2026-11-19 17:39:41.846 INFO (MainThread) [homeassistant.setup] Setting up input_text
+2026-11-19 17:39:41.854 INFO (MainThread) [homeassistant.setup] Setup of domain input_text took 0.01 seconds
+2026-11-19 17:39:41.936 INFO (MainThread) [homeassistant.setup] Setting up timer
+2026-11-19 17:39:41.951 INFO (MainThread) [homeassistant.setup] Setup of domain timer took 0.01 seconds
+2026-11-19 17:39:41.979 INFO (MainThread) [homeassistant.setup] Setting up input_boolean
+2026-11-19 17:39:41.986 INFO (MainThread) [homeassistant.setup] Setup of domain input_boolean took 0.01 seconds
+2026-11-19 17:39:42.020 INFO (MainThread) [homeassistant.setup] Setting up logbook
+2026-11-19 17:39:42.036 INFO (MainThread) [homeassistant.setup] Setup of domain logbook took 0.02 seconds
+2026-11-19 17:39:42.053 INFO (MainThread) [homeassistant.setup] Setting up image_upload
+2026-11-19 17:39:42.070 INFO (MainThread) [homeassistant.setup] Setup of domain image_upload took 0.02 seconds
+2026-11-19 17:39:42.074 INFO (MainThread) [homeassistant.setup] Setting up person
+2026-11-19 17:39:42.100 INFO (MainThread) [homeassistant.setup] Setting up stream
+2026-11-19 17:39:42.214 INFO (MainThread) [homeassistant.setup] Setting up script
+2026-11-19 17:39:42.264 INFO (MainThread) [homeassistant.setup] Setup of domain script took 0.05 seconds
+2026-11-19 17:39:42.316 INFO (MainThread) [homeassistant.setup] Setting up input_button
+2026-11-19 17:39:42.318 INFO (MainThread) [homeassistant.setup] Setup of domain input_button took 0.00 seconds
+2026-11-19 17:39:42.403 INFO (MainThread) [homeassistant.setup] Setting up input_number
+2026-11-19 17:39:42.407 INFO (MainThread) [homeassistant.setup] Setup of domain input_number took 0.00 seconds
+2026-11-19 17:39:42.499 INFO (MainThread) [homeassistant.setup] Setting up input_select
+2026-11-19 17:39:42.508 INFO (MainThread) [homeassistant.setup] Setup of domain input_select took 0.01 seconds
+2026-11-19 17:39:42.510 INFO (MainThread) [homeassistant.setup] Setting up system_health
+2026-11-19 17:39:42.517 INFO (MainThread) [homeassistant.setup] Setup of domain system_health took 0.01 seconds
+2026-11-19 17:39:42.537 WARNING (MainThread) [asyncio] Executing <Task pending name='Task-1' coro=<setup_and_run_hass() running at /workspaces/core/homeassistant/runner.py:248> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:749> cb=[_run_until_complete_cb() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:181] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 1.625 seconds
+2026-11-19 17:39:42.739 INFO (MainThread) [homeassistant.setup] Setting up air_quality
+2026-11-19 17:39:42.739 INFO (MainThread) [homeassistant.setup] Setup of domain air_quality took 0.00 seconds
+2026-11-19 17:39:42.741 INFO (MainThread) [homeassistant.setup] Setting up geo_location
+2026-11-19 17:39:42.757 INFO (MainThread) [homeassistant.setup] Setup of domain geo_location took 0.02 seconds
+2026-11-19 17:39:42.777 INFO (MainThread) [homeassistant.setup] Setting up assist_satellite
+2026-11-19 17:39:42.804 INFO (MainThread) [homeassistant.setup] Setup of domain assist_satellite took 0.03 seconds
+2026-11-19 17:39:42.843 INFO (MainThread) [homeassistant.setup] Setting up text
+2026-11-19 17:39:42.849 INFO (MainThread) [homeassistant.setup] Setup of domain text took 0.00 seconds
+2026-11-19 17:39:42.861 INFO (MainThread) [homeassistant.setup] Setting up radio_frequency
+2026-11-19 17:39:42.865 INFO (MainThread) [homeassistant.setup] Setup of domain radio_frequency took 0.00 seconds
+2026-11-19 17:39:42.878 INFO (MainThread) [homeassistant.setup] Setting up infrared
+2026-11-19 17:39:42.881 INFO (MainThread) [homeassistant.setup] Setup of domain infrared took 0.00 seconds
+2026-11-19 17:39:42.894 INFO (MainThread) [homeassistant.setup] Setting up weather
+2026-11-19 17:39:42.895 INFO (MainThread) [homeassistant.setup] Setup of domain weather took 0.00 seconds
+2026-11-19 17:39:42.898 INFO (MainThread) [homeassistant.setup] Setting up date
+2026-11-19 17:39:42.902 INFO (MainThread) [homeassistant.setup] Setup of domain date took 0.00 seconds
+2026-11-19 17:39:42.908 INFO (MainThread) [homeassistant.setup] Setting up time
+2026-11-19 17:39:42.911 INFO (MainThread) [homeassistant.setup] Setup of domain time took 0.00 seconds
+2026-11-19 17:39:42.914 INFO (MainThread) [homeassistant.setup] Setting up energy
+2026-11-19 17:39:42.916 INFO (MainThread) [homeassistant.setup] Setup of domain energy took 0.00 seconds
+2026-11-19 17:39:42.919 INFO (MainThread) [homeassistant.setup] Setting up garage_door
+2026-11-19 17:39:42.921 INFO (MainThread) [homeassistant.setup] Setup of domain garage_door took 0.00 seconds
+2026-11-19 17:39:42.925 INFO (MainThread) [homeassistant.setup] Setting up qss2
+2026-11-19 17:39:42.926 INFO (MainThread) [custom_components.qss2] Async setup
+2026-11-19 17:39:42.927 INFO (MainThread) [homeassistant.setup] Setting up marketplace
+2026-11-19 17:39:42.928 INFO (MainThread) [homeassistant.setup] Setup of domain marketplace took 0.00 seconds
+2026-11-19 17:39:42.938 INFO (MainThread) [homeassistant.components.marketplace] Starting the Marketplace
+2026-11-19 17:39:42.942 INFO (MainThread) [homeassistant.setup] Setting up met
+2026-11-19 17:39:42.944 INFO (MainThread) [homeassistant.setup] Setup of domain met took 0.00 seconds
+2026-11-19 17:39:42.965 INFO (MainThread) [homeassistant.setup] Setting up tag
+2026-11-19 17:39:42.986 INFO (MainThread) [homeassistant.setup] Setup of domain tag took 0.02 seconds
+2026-11-19 17:39:42.991 INFO (MainThread) [homeassistant.setup] Setup of domain stream took 0.89 seconds
+2026-11-19 17:39:43.012 INFO (MainThread) [homeassistant.setup] Setting up shopping_list
+2026-11-19 17:39:43.014 INFO (MainThread) [homeassistant.setup] Setup of domain shopping_list took 0.00 seconds
+2026-11-19 17:39:43.016 INFO (MainThread) [homeassistant.setup] Setting up schedule
+2026-11-19 17:39:43.025 INFO (MainThread) [homeassistant.setup] Setup of domain schedule took 0.01 seconds
+2026-11-19 17:39:43.037 INFO (MainThread) [homeassistant.setup] Setting up vibration
+2026-11-19 17:39:43.037 INFO (MainThread) [homeassistant.setup] Setup of domain vibration took 0.00 seconds
+2026-11-19 17:39:43.039 INFO (MainThread) [homeassistant.setup] Setting up google_translate
+2026-11-19 17:39:43.040 INFO (MainThread) [homeassistant.setup] Setup of domain google_translate took 0.00 seconds
+2026-11-19 17:39:43.059 INFO (MainThread) [homeassistant.setup] Setting up file
+2026-11-19 17:39:43.061 INFO (MainThread) [homeassistant.setup] Setup of domain file took 0.00 seconds
+2026-11-19 17:39:43.062 INFO (MainThread) [homeassistant.setup] Setting up go2rtc
+2026-11-19 17:39:43.089 INFO (MainThread) [homeassistant.setup] Setting up homeassistant_alerts
+2026-11-19 17:39:43.098 INFO (MainThread) [homeassistant.setup] Setup of domain homeassistant_alerts took 0.01 seconds
+2026-11-19 17:39:43.104 INFO (MainThread) [homeassistant.setup] Setting up my
+2026-11-19 17:39:43.106 INFO (MainThread) [homeassistant.setup] Setup of domain my took 0.00 seconds
+2026-11-19 17:39:43.113 INFO (MainThread) [homeassistant.setup] Setting up sun
+2026-11-19 17:39:43.117 INFO (MainThread) [homeassistant.setup] Setup of domain sun took 0.00 seconds
+2026-11-19 17:39:43.138 INFO (MainThread) [homeassistant.components.binary_sensor] Setting up sun.binary_sensor
+2026-11-19 17:39:43.176 INFO (MainThread) [homeassistant.components.sensor] Setting up sun.sensor
+2026-11-19 17:39:43.253 WARNING (MainThread) [asyncio] Executing <Task finished name='setup sun as dependency of default_config' coro=<async_setup_component() done, defined at /workspaces/core/homeassistant/setup.py:148> result=True created at /workspaces/core/homeassistant/util/async_.py:43> took 0.139 seconds
+2026-11-19 17:39:43.253 INFO (MainThread) [homeassistant.setup] Setting up usage_prediction
+2026-11-19 17:39:43.254 INFO (MainThread) [homeassistant.setup] Setup of domain usage_prediction took 0.00 seconds
+2026-11-19 17:39:43.260 INFO (MainThread) [homeassistant.setup] Setting up counter
+2026-11-19 17:39:43.267 INFO (MainThread) [homeassistant.setup] Setup of domain counter took 0.01 seconds
+2026-11-19 17:39:43.329 INFO (MainThread) [homeassistant.setup] Setup of domain person took 1.25 seconds
+2026-11-19 17:39:43.372 INFO (MainThread) [homeassistant.setup] Setup of domain qss2 took 0.45 seconds
+2026-11-19 17:39:43.386 INFO (MainThread) [homeassistant.setup] Setting up radio_browser
+2026-11-19 17:39:43.388 INFO (MainThread) [homeassistant.setup] Setup of domain radio_browser took 0.00 seconds
+2026-11-19 17:39:43.405 INFO (MainThread) [homeassistant.setup] Setting up hardware
+2026-11-19 17:39:43.482 INFO (MainThread) [homeassistant.setup] Setting up template
+2026-11-19 17:39:43.508 INFO (MainThread) [homeassistant.setup] Setup of domain template took 0.02 seconds
+2026-11-19 17:39:43.519 INFO (MainThread) [homeassistant.components.sensor] Setting up template.sensor
+2026-11-19 17:39:43.560 INFO (MainThread) [homeassistant.setup] Setting up temperature
+2026-11-19 17:39:43.562 INFO (MainThread) [homeassistant.setup] Setup of domain temperature took 0.00 seconds
+2026-11-19 17:39:43.568 INFO (MainThread) [homeassistant.setup] Setting up window
+2026-11-19 17:39:43.569 INFO (MainThread) [homeassistant.setup] Setup of domain window took 0.00 seconds
+2026-11-19 17:39:43.574 INFO (MainThread) [homeassistant.setup] Setting up gate
+2026-11-19 17:39:43.579 INFO (MainThread) [homeassistant.setup] Setup of domain gate took 0.00 seconds
+2026-11-19 17:39:43.585 INFO (MainThread) [homeassistant.setup] Setting up brands
+2026-11-19 17:39:43.593 INFO (MainThread) [homeassistant.setup] Setup of domain brands took 0.01 seconds
+2026-11-19 17:39:43.597 INFO (MainThread) [homeassistant.setup] Setting up application_credentials
+2026-11-19 17:39:43.603 INFO (MainThread) [homeassistant.setup] Setup of domain application_credentials took 0.00 seconds
+2026-11-19 17:39:43.615 INFO (MainThread) [homeassistant.setup] Setting up input_datetime
+2026-11-19 17:39:43.621 INFO (MainThread) [homeassistant.setup] Setup of domain input_datetime took 0.01 seconds
+2026-11-19 17:39:43.627 INFO (MainThread) [homeassistant.setup] Setting up humidity
+2026-11-19 17:39:43.630 INFO (MainThread) [homeassistant.setup] Setup of domain humidity took 0.00 seconds
+2026-11-19 17:39:43.634 INFO (MainThread) [homeassistant.setup] Setting up power
+2026-11-19 17:39:43.636 INFO (MainThread) [homeassistant.setup] Setup of domain power took 0.00 seconds
+2026-11-19 17:39:43.643 INFO (MainThread) [homeassistant.setup] Setting up door
+2026-11-19 17:39:43.648 INFO (MainThread) [homeassistant.setup] Setup of domain door took 0.00 seconds
+2026-11-19 17:39:43.653 INFO (MainThread) [homeassistant.setup] Setting up moisture
+2026-11-19 17:39:43.655 INFO (MainThread) [homeassistant.setup] Setup of domain moisture took 0.00 seconds
+2026-11-19 17:39:43.667 INFO (MainThread) [homeassistant.setup] Setting up battery
+2026-11-19 17:39:43.670 INFO (MainThread) [homeassistant.setup] Setup of domain battery took 0.00 seconds
+2026-11-19 17:39:43.674 INFO (MainThread) [homeassistant.setup] Setting up illuminance
+2026-11-19 17:39:43.677 INFO (MainThread) [homeassistant.setup] Setup of domain illuminance took 0.00 seconds
+2026-11-19 17:39:43.684 INFO (MainThread) [homeassistant.setup] Setting up motion
+2026-11-19 17:39:43.687 INFO (MainThread) [homeassistant.setup] Setup of domain motion took 0.00 seconds
+2026-11-19 17:39:43.694 INFO (MainThread) [homeassistant.setup] Setting up occupancy
+2026-11-19 17:39:43.697 INFO (MainThread) [homeassistant.setup] Setup of domain occupancy took 0.00 seconds
+2026-11-19 17:39:43.707 INFO (MainThread) [homeassistant.components.sensor] Setting up energy.sensor
+2026-11-19 17:39:43.742 INFO (MainThread) [homeassistant.setup] Setup of domain hardware took 0.34 seconds
+2026-11-19 17:39:43.758 INFO (MainThread) [homeassistant.components.tts] Setting up google_translate.tts
+2026-11-19 17:39:43.808 INFO (MainThread) [homeassistant.setup] Setting up analytics
+2026-11-19 17:39:43.811 INFO (MainThread) [homeassistant.setup] Setup of domain analytics took 0.00 seconds
+2026-11-19 17:39:43.818 INFO (MainThread) [homeassistant.setup] Setting up todo
+2026-11-19 17:39:43.826 INFO (MainThread) [homeassistant.setup] Setup of domain todo took 0.01 seconds
+2026-11-19 17:39:43.838 INFO (MainThread) [homeassistant.components.todo] Setting up shopping_list.todo
+2026-11-19 17:39:43.852 INFO (MainThread) [homeassistant.components.sensor] Setting up template.sensor
+2026-11-19 17:39:43.870 INFO (MainThread) [asyncio] execute program '/usr/bin/go2rtc': <_UnixSubprocessTransport pid=40038 running stdout=<_UnixReadPipeTransport fd=27 polling>>
+2026-11-19 17:39:43.965 INFO (MainThread) [homeassistant.setup] Setting up mobile_app
+2026-11-19 17:39:43.971 INFO (MainThread) [homeassistant.setup] Setup of domain mobile_app took 0.01 seconds
+2026-11-19 17:39:44.044 INFO (MainThread) [homeassistant.components.marketplace] Restore started
+2026-11-19 17:39:44.069 INFO (MainThread) [homeassistant.components.notify] Setting up notify.mobile_app
+2026-11-19 17:39:44.164 INFO (MainThread) [homeassistant.setup] Setup of domain go2rtc took 1.10 seconds
+2026-11-19 17:39:44.243 INFO (MainThread) [homeassistant.components.weather] Setting up met.weather
+2026-11-19 17:39:44.291 INFO (MainThread) [homeassistant.setup] Setting up default_config
+2026-11-19 17:39:44.293 INFO (MainThread) [homeassistant.setup] Setup of domain default_config took 0.00 seconds
+2026-11-19 17:39:44.908 WARNING (MainThread) [asyncio] Executing <Task pending name='config entry setup  marketplace 01M4TP69DGHZFGBRQKWQ3296DF' coro=<ConfigEntry.async_setup_locked() running at /workspaces/core/homeassistant/config_entries.py:1061> cb=[gather.<locals>._done_callback() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:810] created at /workspaces/core/homeassistant/util/async_.py:43> took 0.437 seconds
+2026-11-19 17:39:45.118 INFO (MainThread) [homeassistant.components.marketplace] Restore done
+2026-11-19 17:39:45.120 INFO (MainThread) [homeassistant.components.marketplace] Enable category: integration
+2026-11-19 17:39:45.121 INFO (MainThread) [homeassistant.components.marketplace] Enable category: plugin
+2026-11-19 17:39:45.121 INFO (MainThread) [homeassistant.components.marketplace] Enable category: template
+2026-11-19 17:39:45.121 INFO (MainThread) [homeassistant.components.marketplace] Enable category: theme
+2026-11-19 17:39:45.121 WARNING (MainThread) [asyncio] Executing <Task pending name='config entry setup  marketplace 01M4TP69DGHZFGBRQKWQ3296DF' coro=<ConfigEntry.async_setup_locked() running at /workspaces/core/homeassistant/config_entries.py:1061> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/futures.py:393, <1 more>, Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:459> cb=[gather.<locals>._done_callback() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:810] created at /workspaces/core/homeassistant/util/async_.py:43> took 0.103 seconds
+2026-11-19 17:39:45.122 INFO (MainThread) [homeassistant.components.marketplace] Stage changed: setup
+2026-11-19 17:39:45.127 INFO (MainThread) [homeassistant.components.switch] Setting up marketplace.switch
+2026-11-19 17:39:45.138 INFO (MainThread) [homeassistant.components.update] Setting up marketplace.update
+2026-11-19 17:39:45.160 INFO (MainThread) [homeassistant.components.marketplace] Stage changed: waiting
+2026-11-19 17:39:45.160 INFO (MainThread) [homeassistant.components.marketplace] Setup complete, waiting for Home Assistant before startup tasks starts
+2026-11-19 17:39:45.171 INFO (MainThread) [homeassistant.bootstrap] Home Assistant initialized in 8.82s
+2026-11-19 17:39:45.173 INFO (MainThread) [homeassistant.core] Starting Home Assistant 2026.11.0.dev0
+2026-11-19 17:39:45.187 INFO (MainThread) [homeassistant.components.automation.sml_power_feuern] Initialized trigger SML Power feuern
+2026-11-19 17:39:45.191 INFO (QSS) [custom_components.qss2.io] Event from sensor.zaehler_e320_sml_power_curr
+2026-11-19 17:39:45.192 INFO (QSS) [custom_components.qss2.io] sensor.zaehler_e320_sml_power_curr : qsst4
+2026-11-19 17:39:45.431 INFO (MainThread) [homeassistant.components.marketplace] Stage changed: startup
+2026-11-19 17:39:45.440 WARNING (MainThread) [asyncio] Executing <Task pending name='Task-1' coro=<setup_and_run_hass() running at /workspaces/core/homeassistant/runner.py:256> wait_for=<Future pending cb=[Task.task_wakeup()] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:459> cb=[_run_until_complete_cb() at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:181] created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 0.246 seconds
+2026-11-19 17:39:45.482 INFO (MainThread) [homeassistant.components.marketplace] Loading removed repositories
+2026-11-19 17:39:45.963 INFO (MainThread) [homeassistant.components.marketplace] Loading known repositories
+2026-11-19 17:39:46.584 WARNING (MainThread) [asyncio] Executing <Task finished name='Task-167' coro=<MarketplaceManager.async_get_category_repositories_from_catalog() done, defined at /workspaces/core/homeassistant/components/marketplace/base.py:1093> result=None created at /home/vscode/.local/share/uv/python/cpython-3.14.5-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py:732> took 0.268 seconds
+2026-11-19 17:39:46.585 INFO (MainThread) [homeassistant.components.marketplace] Stage changed: running
+2026-11-19 17:41:04.852 INFO (QSS) [custom_components.qss2.io] Event from sensor.zaehler_e320_sml_power_curr
+2026-11-19 17:41:04.853 INFO (QSS) [custom_components.qss2.io] sensor.zaehler_e320_sml_power_curr : qsst4
+2026-11-19 17:45:16.667 INFO (MainThread) [asyncio] <_UnixReadPipeTransport fd=27 polling> was closed by peer
+2026-11-19 17:45:16.668 INFO (MainThread) [asyncio] <_UnixSubprocessTransport pid=40038 running stdout=<_UnixReadPipeTransport closing fd=27 idle>> exited with return code 0
+2026-11-19 17:45:16.676 INFO (Recorder) [homeassistant.components.recorder.pool.RecorderPool] Pool recreating

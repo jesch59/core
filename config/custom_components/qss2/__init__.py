@@ -32,10 +32,9 @@ from .const import (
     CONF_AUTH_Y_KEY,
     CONF_CONV,
     CONF_DATA_TYPE,
-    CONF_ENTITY,
+    CONF_ENTITY_GLOBS,
     CONF_FLUSH_INTERVAL_SECONDS,
     CONF_MAX_BATCH_SIZE,
-    CONF_PRECISION,
     CONF_TABLE_NAME,
     DEFAULT_FLUSH_INTERVAL_SECONDS,
     DEFAULT_MAX_BATCH_SIZE,
@@ -65,9 +64,9 @@ _LOGGER = logging.getLogger(__name__)
 
 def conversion_validator(config: dict[str, Any]) -> dict[str, Any]:
     """Conversion schema validator."""
-    if config[CONF_DATA_TYPE] != 'float':
-        if CONF_PRECISION in config:
-            config.pop(CONF_PRECISION)
+    #if config[CONF_DATA_TYPE] != 'float':
+    #    if CONF_PRECISION in config:
+    #        config.pop(CONF_PRECISION)
     return config
 
 
@@ -83,7 +82,8 @@ AUTHENTICATION_SCHEMA = probatio.Schema(
 
 CONVERSION_SCHEMA = probatio.Schema(
     {
-        probatio.Required(CONF_ENTITY): cv.entity_id,
+        probatio.Required(CONF_ENTITY_GLOBS): cv.string,
+        probatio.Optional(CONF_TABLE_NAME, default=""): cv.string,
         probatio.Optional(CONF_DATA_TYPE, default=DataType.STRING): probatio.In(
             [
                 DataType.INT,
@@ -91,7 +91,6 @@ CONVERSION_SCHEMA = probatio.Schema(
                 DataType.STRING,
             ]
         ),
-        probatio.Optional(CONF_PRECISION): cv.positive_int,
     }
 )
 
@@ -110,7 +109,7 @@ CONFIG_SCHEMA = probatio.Schema(
                     CONF_FLUSH_INTERVAL_SECONDS, default=DEFAULT_FLUSH_INTERVAL_SECONDS
                 ): cv.positive_int,
                 probatio.Optional(CONF_AUTH, default={}): AUTHENTICATION_SCHEMA,
-                probatio.Optional(CONF_CONV): probatio.All(
+                probatio.Optional(CONF_CONV, default=[]): probatio.All(
                     probatio.EnsureList(), [probatio.All(CONVERSION_SCHEMA, conversion_validator)]
                 ),
             }
@@ -132,6 +131,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     # JE - alpha_vantage
     # symbols: list[dict[str, str]] = config.get(CONF_SYMBOLS, [])
     # conversions: list[dict[str, str]] = config.get(CONF_FOREIGN_EXCHANGE, [])
+    db_conversions = conf.get(CONF_CONV, [])
 
 
 
@@ -151,6 +151,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         auth=db_auth,
         max_batch_size=db_max_batch_size,
         flush_interval_seconds=db_flush_interval_seconds,
+        conversions=db_conversions,
     )
 
     _LOGGER.info("Async setup")
@@ -232,6 +233,7 @@ class QuestDB(threading.Thread):  # pylint: disable = R0902
         # buffered-but-unflushed rows are flushed and the connection is
         # closed cleanly on every exit path, including shutdown.
         connection = QuestDBConnection(self.config)
+        # JE - Create table is not exist
         try:
             while True:
                 event = get_event_from_queue(

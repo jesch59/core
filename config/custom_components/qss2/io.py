@@ -1,22 +1,30 @@
 """Helper functions for IO operations on QuestDB."""
 
 from dataclasses import dataclass, field
+import fnmatch
 from json import dumps
 import logging
 import re
 from time import monotonic
 from typing import TYPE_CHECKING, Any
 
-from questdb.ingress import IngressError, Protocol, Sender
+import numpy as np
+import questdb
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_fixed
 
 from .const import (
+    CONF_DATA_TYPE,
+    CONF_ENTITY_GLOBS,
+    CONF_TABLE_NAME,
     DEFAULT_FLUSH_INTERVAL_SECONDS,
     DEFAULT_MAX_BATCH_SIZE,
     DEFAULT_TABLE_NAME,
     RETRY_ATTEMPTS,
     RETRY_WAIT_SECONDS,
 )
+
+#from questdb.ingress import QuestDBError, Protocol, Sender
+
 
 if TYPE_CHECKING:
     from queue import Queue
@@ -76,26 +84,31 @@ class QuestDBConfig:
     auth: QuestDBAuth = field(default_factory=QuestDBAuth)
     max_batch_size: int = DEFAULT_MAX_BATCH_SIZE
     flush_interval_seconds: float = DEFAULT_FLUSH_INTERVAL_SECONDS
+    conversions: list[dict[str, str]] = field(default_factory=list)
 
 
-def _create_sender(config: QuestDBConfig) -> Sender:
+def _create_sender(config: QuestDBConfig) -> questdb.Sender:
     """Create a QuestDB Sender based on authentication settings."""
     auth = config.auth
     if auth.kid:  # Authenticated
-        return Sender(
-            Protocol.Tcps,
+        return questdb.Sender(
+            questdb.Protocol.Wss,
             config.host,
             config.port,
+            auto_flush=False,
             username=auth.kid,
             token=auth.d_key,
             token_x=auth.x_key,
             token_y=auth.y_key,
-            tls_verify=auth.ssl_check,
+            tls_verify=auth.ssl_check
         )
-    return Sender(Protocol.Tcp, config.host, config.port)
+    return questdb.Sender(questdb.Protocol.Ws,
+                  config.host,
+                  config.port,
+                  auto_flush=False
+    )
 
-
-def _insert_row(sender: Sender, event: Event, table_name: str) -> None:
+def _insert_row(sender: questdb.Sender, event: Event, table_name: str, conversions: list[dict[str, str]]) -> None:
     """Buffer a single row on the provided sender without flushing it.
 
     Flushing is the caller's responsibility, so that many rows can be
@@ -106,14 +119,42 @@ def _insert_row(sender: Sender, event: Event, table_name: str) -> None:
     _LOGGER.info("Event from %s", entity_id)
     state = event.data.get("new_state")
     attrs = _sanitize_value(dict(state.attributes))
+
+    columns = {}
+    columns["state"] = _strip_control_characters(state.state)
+    columns["attributes"] = dumps(attrs, sort_keys=True, default=str)
+
+    for conv in conversions:
+        # If the entity_id matches the glob pattern, use the specified table name
+        # and data type for the value column.
+        if fnmatch.fnmatch(entity_id, conv.get(CONF_ENTITY_GLOBS)):
+            tn = conv.get(CONF_TABLE_NAME)
+            if tn != "":
+                table_name = tn
+            match conv.get(CONF_DATA_TYPE):
+                case "float":
+                    try:
+                        columns["value"] = float(_strip_control_characters(state.state))
+                    except ValueError:
+                        # Use NaN to represent an invalid float
+                        columns["value"] = np.nan
+                case "int":
+                    try:
+                        columns["value"] = int(_strip_control_characters(state.state))
+                    except ValueError:
+                        # Use the minimum 32-bit signed integer value to represent an invalid integer
+                        columns["value"] = 0x80000000
+            _LOGGER.info("%s : %s", entity_id, table_name)
+            break
+
     sender.row(
         table_name,
         symbols={"entity_id": entity_id},
-        columns={
-            "state": _strip_control_characters(state.state),
-            "value": 3250,
-            "attributes": dumps(attrs, sort_keys=True, default=str),
-        },
+        columns=columns,
+        #columns={
+        #    "state": _strip_control_characters(state.state),
+        #    "attributes": dumps(attrs, sort_keys=True, default=str),
+        #},
         at=event.time_fired,
     )
 
@@ -125,7 +166,7 @@ class QuestDBConnection:
     connection is created lazily on the first buffered row and reused across
     many events. Rows are only flushed to QuestDB once ``max_batch_size`` rows
     have been buffered, or once ``flush_interval_seconds`` have elapsed since
-    the last flush, whichever happens first. On a transient ``IngressError``
+    the last flush, whichever happens first. On a transient ``QuestDBError``
     the (possibly broken) connection is dropped and lazily recreated before
     the next retry attempt.
     """
@@ -133,7 +174,7 @@ class QuestDBConnection:
     def __init__(self, config: QuestDBConfig) -> None:
         """Initialize the connection wrapper for the given configuration."""
         self._config = config
-        self._sender: Sender | None = None
+        self._sender: questdb.Sender | None = None
         self._pending_rows = 0
         self._last_flush_monotonic = monotonic()
 
@@ -163,7 +204,7 @@ class QuestDBConnection:
         if self._pending_rows and self._interval_elapsed():
             try:
                 self._flush()
-            except IngressError:
+            except questdb.QuestDBError:
                 _LOGGER.exception(
                     "Failed to flush buffered rows to QuestDB; the buffered "
                     "rows were lost and the connection will be re-established"
@@ -183,12 +224,12 @@ class QuestDBConnection:
         self._pending_rows = 0
         try:
             sender.close(flush=True)
-        except IngressError:
+        except questdb.QuestDBError:
             _LOGGER.exception(
                 "Failed to flush buffered rows while closing the QuestDB connection"
             )
 
-    def _ensure_sender(self) -> Sender:
+    def _ensure_sender(self) -> questdb.Sender:
         """Lazily create and establish the underlying sender connection."""
         if self._sender is None:
             sender = _create_sender(self._config)
@@ -209,7 +250,7 @@ class QuestDBConnection:
     def _buffer_and_maybe_flush(self, event: Event) -> None:
         """Buffer ``event`` as a row, flushing once the batch size is hit."""
         sender = self._ensure_sender()
-        _insert_row(sender, event, self._config.table_name)
+        _insert_row(sender, event, self._config.table_name, self._config.conversions)
         self._pending_rows += 1
         if self._pending_rows >= self._config.max_batch_size:
             self._flush()
@@ -229,13 +270,13 @@ class QuestDBConnection:
     @retry(
         stop=stop_after_attempt(RETRY_ATTEMPTS),
         wait=wait_fixed(RETRY_WAIT_SECONDS),
-        retry=retry_if_exception_type(IngressError),
+        retry=retry_if_exception_type(questdb.QuestDBError),
     )
     def _insert_with_retry(self, event: Event) -> None:
         """Buffer a row, reconnecting before each retry attempt on failure."""
         try:
             self._buffer_and_maybe_flush(event)
-        except IngressError:
+        except questdb.QuestDBError:
             self._reconnect()
             raise
 
@@ -247,6 +288,6 @@ def insert_event_data_into_questdb(
     try:
         _LOGGER.debug("Inserting event: %s", event)
         connection.insert_event(event)
-    except IngressError:
+    except questdb.QuestDBError:
         _LOGGER.exception("Failed to insert event data into QuestDB")
     queue.task_done()

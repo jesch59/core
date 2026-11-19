@@ -13,6 +13,7 @@ CONF_FLUSH_INTERVAL_SECONDS = "flush_interval_seconds"
 DEFAULT_TABLE_NAME = "qss2"
 DEFAULT_MAX_BATCH_SIZE = 500
 DEFAULT_FLUSH_INTERVAL_SECONDS = 5
+DEFAULT_FLUSH_ROWS = 10
 
 CONF_AUTH = "authentication"
 CONF_AUTH_SSL_CHECK = "ssl_check"
@@ -23,6 +24,7 @@ CONF_AUTH_Y_KEY = "y_key"
 CONF_CONV = "conversions"
 CONF_DATA_TYPE = "data_type"
 CONF_ENTITY = "entity"
+CONF_ENTITY_GLOBS = "entity_globs"
 CONF_PRECISION = "precision"
 
 RETRY_WAIT_SECONDS = 5

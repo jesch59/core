@@ -4,48 +4,48 @@
   "key": "core.restore_state",
   "data": [
     {
-      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-11-04T09:06:18.789799+00:00","last_reported":"2026-11-04T09:06:18.789799+00:00","last_updated":"2026-11-04T09:06:18.789799+00:00","context":{"id":"01M6JWY9H5PSS1QB7GE59SM7SP","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-11-19T17:45:57.890273+00:00","last_reported":"2026-11-19T17:45:57.890273+00:00","last_updated":"2026-11-19T17:45:57.890273+00:00","context":{"id":"01M7TEMJW2PW8H8D8M5PZTZSBD","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-11-04T09:39:08.405580+00:00"
+      "last_seen": "2026-11-19T17:51:10.881217+00:00"
     },
     {
-      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Automatic backup"},"last_changed":"2026-11-04T09:06:19.020220+00:00","last_reported":"2026-11-04T09:06:19.020220+00:00","last_updated":"2026-11-04T09:06:19.020220+00:00","context":{"id":"01M6JWY9RCRMFM5RYZK6T18SGP","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Automatic backup"},"last_changed":"2026-11-19T17:45:58.102443+00:00","last_reported":"2026-11-19T17:45:58.102443+00:00","last_updated":"2026-11-19T17:45:58.102443+00:00","context":{"id":"01M7TEMK2PG2FW6RXA3T0NKWWX","parent_id":null,"user_id":null}},
       "extra_data": {
         "last_event_type": null,
         "last_event_attributes": null
       },
-      "last_seen": "2026-11-04T09:39:08.405580+00:00"
+      "last_seen": "2026-11-19T17:51:10.881217+00:00"
     },
     {
-      "state": {"entity_id":"person.jorg_eschbach","state":"unknown","attributes":{"editable":true,"id":"jorg_eschbach","device_trackers":[],"in_zones":[],"user_id":"db9f726d033746389d32347374ed3a8e","friendly_name":"Jörg Eschbach"},"last_changed":"2026-11-04T09:06:20.461719+00:00","last_reported":"2026-11-04T09:06:23.565816+00:00","last_updated":"2026-11-04T09:06:23.565816+00:00","context":{"id":"01M6JWYE6DV1KY78H4BVNHAHPX","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"person.jorg_eschbach","state":"unknown","attributes":{"editable":true,"id":"jorg_eschbach","device_trackers":[],"in_zones":[],"user_id":"db9f726d033746389d32347374ed3a8e","friendly_name":"Jörg Eschbach"},"last_changed":"2026-11-19T17:45:59.606826+00:00","last_reported":"2026-11-19T17:46:02.022476+00:00","last_updated":"2026-11-19T17:46:02.022476+00:00","context":{"id":"01M7TEMPX6G28AE0QTB6NAMFXW","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-11-04T09:39:08.405580+00:00"
+      "last_seen": "2026-11-19T17:51:10.881217+00:00"
     },
     {
-      "state": {"entity_id":"sensor.zaehler_e320_sml_power_curr","state":"-2543.0","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"SML Power"},"last_changed":"2026-11-04T09:06:21.293664+00:00","last_reported":"2026-11-04T09:06:21.288392+00:00","last_updated":"2026-11-04T09:06:21.293664+00:00","context":{"id":"01M6JWYBZDHK8ZTEYXK488MJMZ","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.zaehler_e320_sml_power_curr","state":"130","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"SML Power"},"last_changed":"2026-11-19T17:47:08.962958+00:00","last_reported":"2026-11-19T17:47:08.962958+00:00","last_updated":"2026-11-19T17:47:08.962958+00:00","context":{"id":"01M7TEPR92T5JWQQPNE682GRBY","parent_id":null,"user_id":"db9f726d033746389d32347374ed3a8e"}},
       "extra_data": {
         "native_value": -2543.0,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2026-11-04T09:39:08.405580+00:00"
+      "last_seen": "2026-11-19T17:51:10.881217+00:00"
     },
     {
-      "state": {"entity_id":"automation.sml_power_feuern","state":"on","attributes":{"id":"1792826229811","last_triggered":"2026-10-24T07:17:57.065334+00:00","mode":"single","current":0,"friendly_name":"SML Power feuern"},"last_changed":"2026-11-04T09:06:21.307106+00:00","last_reported":"2026-11-04T09:06:21.307106+00:00","last_updated":"2026-11-04T09:06:21.307106+00:00","context":{"id":"01M6JWYBZV833G8WV640WTJ8M3","parent_id":null,"user_id":null}},
-      "extra_data": null,
-      "last_seen": "2026-11-04T09:39:08.405580+00:00"
-    },
-    {
-      "state": {"entity_id":"sensor.zaehler_e320_sml_power_curr2","state":"-2453.0","attributes":{"state_class":"measurement","unit_of_measurement":"W","friendly_name":"Zaehler E320 SML Power_curr2"},"last_changed":"2026-11-04T09:06:21.417524+00:00","last_reported":"2026-11-04T09:06:21.417524+00:00","last_updated":"2026-11-04T09:06:21.417524+00:00","context":{"id":"01M6JWYC394S288SMCZS2WEEX8","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.zaehler_e320_sml_power_curr2","state":"-2453.0","attributes":{"state_class":"measurement","unit_of_measurement":"W","friendly_name":"Zaehler E320 SML Power_curr2"},"last_changed":"2026-11-19T17:46:00.473093+00:00","last_reported":"2026-11-19T17:46:00.473093+00:00","last_updated":"2026-11-19T17:46:00.473093+00:00","context":{"id":"01M7TEMNCSDJJYFYVTECH7DP7M","parent_id":null,"user_id":null}},
       "extra_data": {
         "native_value": -2453.0,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2026-11-04T09:39:08.405580+00:00"
+      "last_seen": "2026-11-19T17:51:10.881217+00:00"
     },
     {
-      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-11-04T09:06:21.932159+00:00","last_reported":"2026-11-04T09:06:21.932159+00:00","last_updated":"2026-11-04T09:06:21.932159+00:00","context":{"id":"01M6JWYCKC4R2NR4EF653PD3PJ","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"automation.sml_power_feuern","state":"on","attributes":{"id":"1792826229811","last_triggered":"2026-10-24T07:17:57.065334+00:00","mode":"single","current":0,"friendly_name":"SML Power feuern"},"last_changed":"2026-11-19T17:46:00.625504+00:00","last_reported":"2026-11-19T17:46:00.625504+00:00","last_updated":"2026-11-19T17:46:00.625504+00:00","context":{"id":"01M7TEMNHH0V9WHVZP2B8D5BSH","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-11-04T09:39:08.405580+00:00"
+      "last_seen": "2026-11-19T17:51:10.881217+00:00"
+    },
+    {
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-11-19T17:46:00.928206+00:00","last_reported":"2026-11-19T17:46:00.928206+00:00","last_updated":"2026-11-19T17:46:00.928206+00:00","context":{"id":"01M7TEMNV0452F7E0N24SQN21T","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-11-19T17:51:10.881217+00:00"
     }
   ]
 }

@@ -1,5 +1,5 @@
 host: "192.168.2.42"
-port: 9009
+port: 9000
 table_name: "qsst"
 authentication:
   ssl_check: false
@@ -7,6 +7,6 @@ include:
   entities:
     - "sensor.zaehler_e320_sml_power_curr"
 conversions:
-  - entity: "sensor.zaehler_e320_sml_power_curr"
-    type: "float"
-    precision: 2
+  - entity_globs: "sensor.zaehler_e320*"
+    table_name: "qsst4"
+    data_type: "float"
